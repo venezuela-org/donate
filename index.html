@@ -16,7 +16,10 @@
 
   header{background:var(--navy);color:#fff;padding:14px 0;}
   header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;}
+  header .orgs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
   header .plus{color:var(--yellow);font-weight:900;}
+  .lang-btn{background:var(--yellow);color:var(--navy);border:none;border-radius:8px;font-weight:900;font-size:12px;letter-spacing:1px;padding:7px 14px;cursor:pointer;font-family:inherit;}
+  .lang-btn:hover{filter:brightness(1.05);}
   .tri{height:6px;display:flex;}
   .tri span{flex:1;}
   .tri span:nth-child(1){background:var(--yellow);}
@@ -36,6 +39,7 @@
   .bar{height:18px;background:#EEF1F8;border-radius:10px;margin:14px 0 8px;overflow:hidden;}
   .fill{height:100%;width:0;background:linear-gradient(90deg,var(--yellow),#FFB300);border-radius:10px;transition:width 1.2s ease;}
   .pct{font-size:13px;color:var(--muted);}
+  .fx-note{font-size:11.5px;color:var(--muted);margin-top:6px;font-style:italic;display:none;}
   .updated{font-size:12px;color:var(--muted);margin-top:10px;}
 
   .donate-box{background:var(--navy);border-radius:18px;padding:26px;color:#fff;display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:10px 0 30px;}
@@ -44,10 +48,13 @@
   .donate-box p{color:#C9D2EC;font-size:14px;margin-top:6px;}
   .donate-box .contact a{color:var(--yellow);font-weight:800;text-decoration:none;}
   .donate-box .contact a:hover{text-decoration:underline;}
-  .paycard{background:#fff;border-radius:14px;padding:16px 22px;text-align:center;color:var(--ink);}
+  .paycard{background:#fff;border-radius:14px;padding:16px 22px;text-align:center;color:var(--ink);min-width:230px;}
   .paycard .via{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
   .paycard .tw{font-weight:900;font-size:20px;color:var(--navy);}
   .paycard .num{margin-top:4px;}
+  .paycard .methods{font-weight:900;font-size:17px;color:var(--navy);margin-top:4px;line-height:1.4;}
+  .paycard .mailme{font-weight:800;font-size:13px;margin-top:6px;}
+  .paycard .mailme a{color:var(--red);}
   .paycard .ref{font-size:11px;color:var(--muted);margin-top:5px;}
 
   h3{color:var(--navy);font-weight:900;font-size:21px;margin:26px 0 10px;}
@@ -67,16 +74,19 @@
   .poster-link{margin:0 0 30px;font-size:14px;}
   .poster-link a{color:var(--navy);font-weight:800;}
 
-  footer{border-top:1.5px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+  footer{border-top:1.5px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:12.5px;}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <span>Creative Commons Venezuela</span>
-    <span class="plus">+</span>
-    <span>Creative Commons Switzerland</span>
+    <div class="orgs">
+      <a href="https://www.linkedin.com/company/creative-commons-venezuela/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" data-i18n="org1">Creative Commons Venezuela</a>
+      <span class="plus">+</span>
+      <span data-i18n="org2">Creative Commons Switzerland</span>
+    </div>
+    <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">ES</button>
   </div>
 </header>
 <div class="tri"><span></span><span></span><span></span></div>
@@ -84,65 +94,75 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="eyebrow">A joint solidarity initiative · July 2026</div>
-    <h1>Tools to learn, draw and begin again</h1>
-    <p class="lede">School and creative materials for <b>1,500 children</b> affected by the recent earthquakes in Venezuela — delivered <b>before the school year restarts on 15 September</b>.</p>
+    <div class="eyebrow" data-i18n="eyebrow">A joint solidarity initiative · July 2026</div>
+    <h1 data-i18n="title">Tools to learn, draw and begin again</h1>
+    <p class="lede" data-i18n="lede">School and creative materials for <b>1,500 children</b> affected by the recent earthquakes in Venezuela — delivered <b>before the school year restarts on 15 September</b>.</p>
   </div>
 
   <div class="progress-card">
     <div class="amounts">
-      <div class="raised">CHF <span id="raised-num">0</span> raised</div>
-      <div class="goal">of CHF <span id="goal-num">0</span> goal</div>
+      <div class="raised"><span id="raised-txt"></span></div>
+      <div class="goal"><span id="goal-txt"></span></div>
     </div>
     <div class="bar"><div class="fill" id="fill"></div></div>
-    <div class="pct"><span id="pct">0</span>% funded · about CHF 7 puts a full kit in one child’s hands</div>
-    <div class="updated">Last updated: <span id="updated"></span></div>
+    <div class="pct"><span id="pct">0</span><span data-i18n="pct_line">% funded · about CHF 7 puts a full kit in one child’s hands</span></div>
+    <div class="fx-note" id="fx-note" data-i18n="fx_note"></div>
+    <div class="updated"><span data-i18n="updated_label">Last updated:</span> <span id="updated"></span></div>
   </div>
 
   <div class="donate-box">
     <div class="left">
-      <h2>Donate from CHF 1</h2>
-      <p>Every franc counts. Open your TWINT app, choose “Send”, and enter the number — use the reference so we can track kit donations.</p>
-      <p class="contact">Questions or larger donations: <a href="mailto:arturos@domoart.ch">arturos@domoart.ch</a></p>
+      <h2 data-i18n="donate_h">Donate from CHF 1</h2>
+      <p data-i18n="donate_p">Every franc counts. Open your TWINT app, choose “Send”, and enter the number — use the reference so we can track kit donations.</p>
+      <p class="contact" id="local-currency" style="display:none;" data-i18n="local_currency"></p>
+      <p class="contact"><span data-i18n="contact_label">Questions or larger donations:</span> <a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener">LinkedIn — Arturo Sánchez Pineda</a><br><span data-i18n="org_follow">Follow the initiative:</span> <a href="https://www.linkedin.com/company/creative-commons-venezuela/" target="_blank" rel="noopener">LinkedIn — Creative Commons Venezuela</a></p>
     </div>
-    <div class="paycard">
-      <div class="via">Donate via</div>
+    <!-- EN payment card: TWINT -->
+    <div class="paycard" id="pay-en">
+      <div class="via" data-i18n="via">Donate via</div>
       <div class="tw">TWINT</div>
       <div class="num"><img src="twint-number.png" alt="TWINT donation number — see campaign poster" style="height:24px;display:block;margin:4px auto 0;"></div>
-      <div class="ref">Reference: “School kits Venezuela”</div>
+      <div class="ref" data-i18n="ref">Reference: “School kits Venezuela”</div>
+    </div>
+    <!-- ES payment card: Bizum / Efectivo / Transferencia -->
+    <div class="paycard" id="pay-es" style="display:none;">
+      <div class="via">Dona mediante</div>
+      <div class="methods">Bizum · Efectivo · Transferencia</div>
+      <div class="mailme">Escríbenos para los datos:<br><a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener">LinkedIn: Arturo Sánchez Pineda</a></div>
+      <div class="ref">Referencia: «Kits escolares Venezuela»</div>
     </div>
   </div>
 
-  <h3>What your donation buys</h3>
+  <h3 data-i18n="buys_h">What your donation buys</h3>
   <div class="kits">
     <div class="kit basic">
-      <img src="kit-basic.png" alt="Basic kit: drawing pad, 12 coloured pencils, 4 graphite pencils, sharpener, simple package">
+      <img src="kit-basic.png" alt="Basic kit contents">
       <div class="body">
-        <div class="tag">Basic kit · × 1,000</div>
-        <p>1 white drawing pad (letter/A4, 36–40 sheets) · 1 box of 12 coloured pencils · 4 graphite pencils · 1 sharpener · 1 simple package</p>
+        <div class="tag" data-i18n="kit1_tag">Basic kit · × 1,000</div>
+        <p data-i18n="kit1_p">1 white drawing pad (letter/A4, 36–40 sheets) · 1 box of 12 coloured pencils · 4 graphite pencils · 1 sharpener · 1 simple package</p>
       </div>
     </div>
     <div class="kit reuse">
-      <img src="kit-reusable.png" alt="Reusable pilot kit: drawstring bag, pencil case, folder with clip, 60 sheets, coloured and graphite pencils, sharpener">
+      <img src="kit-reusable.png" alt="Reusable kit contents">
       <div class="body">
-        <div class="tag">Reusable pilot kit · × 500</div>
-        <p>Drawstring bag · pencil case · reusable folder with pocket and clip · 60 white sheets · 12 coloured pencils · 4 graphite pencils · 1 sharpener</p>
+        <div class="tag" data-i18n="kit2_tag">Reusable pilot kit · × 500</div>
+        <p data-i18n="kit2_p">Drawstring bag · pencil case · reusable folder with pocket and clip · 60 white sheets · 12 coloured pencils · 4 graphite pencils · 1 sharpener</p>
       </div>
     </div>
   </div>
 
-  <div class="note">
+  <div class="note" data-i18n="note">
     <b>Practical help, delivered with dignity.</b> These kits place useful materials directly in children’s hands, ease an immediate cost for their families, and support a return to learning and creative activity.
   </div>
 
-  <p class="poster-link">📄 <a href="cc-venezuela-switzerland-school-kits-poster.pdf">Download the campaign poster (PDF)</a> — print it, share it, hang it up.</p>
+  <p class="poster-link">📄 <a id="poster-a" href="cc-venezuela-switzerland-school-kits-poster.pdf" data-i18n="poster_link">Download the campaign poster (PDF)</a> <span data-i18n="poster_tail">— print it, share it, hang it up.</span></p>
 
 </div>
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-    <span>A joint initiative of Creative Commons Venezuela and Creative Commons Switzerland members · <a href="mailto:arturos@domoart.ch" style="color:inherit;">arturos@domoart.ch</a></span>
-    <span>July 2026</span>
+    <span><span data-i18n="footer1">A joint initiative of Creative Commons Venezuela and Creative Commons Switzerland members</span> · <a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener" style="color:inherit;">linkedin.com/in/arturo-sanchez-pineda</a></span>
+    <span data-i18n="footer2">July 2026</span>
   </div>
 </footer>
 
@@ -150,21 +170,115 @@
 /* ============================================================
    EDIT ONLY THESE THREE LINES when new donations arrive,
    then commit and push. Everything else updates automatically.
+   (Amounts are in CHF; the Spanish view shows the same figures
+   labelled €/$ as an approximation.)
    ============================================================ */
-const RAISED_CHF  = 2000;
+const RAISED_CHF  = 2120;
 const GOAL_CHF    = 10000;
-const LAST_UPDATE = "14 July 2026";
+const LAST_UPDATE = { en: "17 July 2026", es: "17 de julio de 2026" };
 /* ============================================================ */
 
-const fmt = n => n.toLocaleString("de-CH");
-document.getElementById("raised-num").textContent = fmt(RAISED_CHF);
-document.getElementById("goal-num").textContent   = fmt(GOAL_CHF);
-document.getElementById("updated").textContent    = LAST_UPDATE;
-const pct = Math.min(100, Math.round(RAISED_CHF / GOAL_CHF * 100));
-document.getElementById("pct").textContent = pct;
-requestAnimationFrame(() =>
-  requestAnimationFrame(() =>
+const I18N = {
+  en: {
+    org1: "Creative Commons Venezuela",
+    org2: "Creative Commons Switzerland",
+    eyebrow: "A joint solidarity initiative · July 2026",
+    title: "Tools to learn, draw and begin again",
+    lede: "School and creative materials for <b>1,500 children</b> affected by the recent earthquakes in Venezuela — delivered <b>before the school year restarts on 15 September</b>.",
+    pct_line: "% funded · about CHF 7 puts a full kit in one child’s hands",
+    fx_note: "",
+    updated_label: "Last updated:",
+    donate_h: "Donate from CHF 1",
+    donate_p: "Every franc counts. Open your TWINT app, choose “Send”, and enter the number — use the reference so we can track kit donations.",
+    local_currency: "",
+    contact_label: "Questions or larger donations:",
+    org_follow: "Follow the initiative:",
+    via: "Donate via",
+    ref: "Reference: “School kits Venezuela”",
+    buys_h: "What your donation buys",
+    kit1_tag: "Basic kit · × 1,000",
+    kit1_p: "1 white drawing pad (letter/A4, 36–40 sheets) · 1 box of 12 coloured pencils · 4 graphite pencils · 1 sharpener · 1 simple package",
+    kit2_tag: "Reusable pilot kit · × 500",
+    kit2_p: "Drawstring bag · pencil case · reusable folder with pocket and clip · 60 white sheets · 12 coloured pencils · 4 graphite pencils · 1 sharpener",
+    note: "<b>Practical help, delivered with dignity.</b> These kits place useful materials directly in children’s hands, ease an immediate cost for their families, and support a return to learning and creative activity.",
+    poster_link: "Download the campaign poster (PDF)",
+    poster_tail: "— print it, share it, hang it up.",
+    footer1: "A joint initiative of <a href='https://www.linkedin.com/company/creative-commons-venezuela/' target='_blank' rel='noopener' style='color:inherit;'>Creative Commons Venezuela</a> and Creative Commons Switzerland members",
+    footer2: "July 2026",
+    poster_href: "cc-venezuela-switzerland-school-kits-poster.pdf",
+    html_title: "School kits for Venezuela — Donate",
+    raised_txt: n => "CHF " + n.toLocaleString("de-CH") + " raised",
+    goal_txt: n => "of CHF " + n.toLocaleString("de-CH") + " goal",
+    btn: "ES"
+  },
+  es: {
+    org1: "Creative Commons Venezuela",
+    org2: "Creative Commons Suiza",
+    eyebrow: "Una iniciativa solidaria conjunta · Julio 2026",
+    title: "Herramientas para aprender, dibujar y volver a empezar",
+    lede: "Material escolar y creativo para <b>1.500 niñas y niños</b> afectados por los recientes terremotos en Venezuela — entregado <b>antes del reinicio del año escolar el 15 de septiembre</b>.",
+    pct_line: "% de la meta · unos 7 € ponen un kit completo en las manos de un niño",
+    fx_note: "La meta oficial de la campaña es CHF 10.000; los importes en € / $ son aproximados.",
+    updated_label: "Última actualización:",
+    donate_h: "Dona desde 1 € / 1 $",
+    donate_p: "Cada aporte cuenta, por pequeño que sea. Aceptamos Bizum, efectivo y transferencia — escríbenos y te enviamos los datos en un minuto.",
+    local_currency: "¿Quieres ayudar en tu moneda local? Escríbenos por <a href=\"https://www.linkedin.com/in/arturo-sanchez-pineda/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> y te contamos cómo.",
+    contact_label: "Preguntas o donaciones mayores:",
+    org_follow: "Sigue la iniciativa:",
+    via: "Dona mediante",
+    ref: "Referencia: «Kits escolares Venezuela»",
+    buys_h: "En qué se convierte tu donación",
+    kit1_tag: "Kit básico · × 1.000",
+    kit1_p: "1 bloc blanco para dibujo (carta/A4, 36–40 hojas) · 1 caja de 12 colores · 4 lápices de grafito · 1 sacapuntas · 1 empaque sencillo",
+    kit2_tag: "Kit piloto reutilizable · × 500",
+    kit2_p: "Bolso sencillo · cartuchera · carpeta reutilizable con bolsillo y pinza · 60 hojas blancas · 12 colores · 4 lápices de grafito · 1 sacapuntas",
+    note: "<b>Ayuda práctica, entregada con dignidad.</b> Estos kits ponen materiales útiles directamente en las manos de los niños, alivian un gasto inmediato para sus familias y apoyan el regreso al aprendizaje y a la actividad creativa.",
+    poster_link: "Descarga el cartel de la campaña (PDF)",
+    poster_tail: "— imprímelo, compártelo, cuélgalo.",
+    footer1: "Una iniciativa conjunta de miembros de <a href='https://www.linkedin.com/company/creative-commons-venezuela/' target='_blank' rel='noopener' style='color:inherit;'>Creative Commons Venezuela</a> y Creative Commons Suiza",
+    footer2: "Julio 2026",
+    poster_href: "cartel-kits-escolares-venezuela-suiza.pdf",
+    html_title: "Kits escolares para Venezuela — Dona",
+    raised_txt: n => n.toLocaleString("es-ES") + " € / $ recaudados",
+    goal_txt: n => "de una meta de " + n.toLocaleString("es-ES") + " € / $",
+    btn: "EN"
+  }
+};
+
+let lang = new URLSearchParams(location.search).get("lang") === "es" ? "es" : "en";
+
+function render() {
+  const t = I18N[lang];
+  document.documentElement.lang = lang;
+  document.title = t.html_title;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.getElementById("raised-txt").textContent = t.raised_txt(RAISED_CHF);
+  document.getElementById("goal-txt").textContent   = t.goal_txt(GOAL_CHF);
+  document.getElementById("updated").textContent    = LAST_UPDATE[lang];
+  document.getElementById("lang-toggle").textContent = t.btn;
+  document.getElementById("poster-a").href = t.poster_href;
+  document.getElementById("pay-en").style.display = lang === "en" ? "" : "none";
+  document.getElementById("pay-es").style.display = lang === "es" ? "" : "none";
+  document.getElementById("fx-note").style.display = lang === "es" ? "block" : "none";
+  document.getElementById("local-currency").style.display = lang === "es" ? "block" : "none";
+  const pct = Math.min(100, Math.round(RAISED_CHF / GOAL_CHF * 100));
+  document.getElementById("pct").textContent = pct;
+  requestAnimationFrame(() => requestAnimationFrame(() =>
     document.getElementById("fill").style.width = pct + "%"));
+}
+
+function toggleLang() {
+  lang = lang === "en" ? "es" : "en";
+  const u = new URL(location);
+  if (lang === "es") u.searchParams.set("lang", "es"); else u.searchParams.delete("lang");
+  history.replaceState(null, "", u);
+  render();
+}
+
+render();
 </script>
 
 </body>
