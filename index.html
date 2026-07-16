@@ -176,7 +176,12 @@
 const RAISED_CHF  = 2020;
 const GOAL_CHF    = 10000;
 const LAST_UPDATE = { en: "17 July 2026", es: "17 de julio de 2026" };
-/* ============================================================ */
+/* ============================================================
+   FX fallback (used if the live rate fetch fails). The Spanish
+   view converts CHF to real EUR/USD with the ECB rate, fetched
+   live from frankfurter.app on every visit.
+   ============================================================ */
+let FX = { EUR: 1.081, USD: 1.233, date: null };
 
 const I18N = {
   en: {
@@ -218,7 +223,7 @@ const I18N = {
     title: "Herramientas para aprender, dibujar y volver a empezar",
     lede: "Material escolar y creativo para <b>1.500 niñas y niños</b> afectados por los recientes terremotos en Venezuela — entregado <b>antes del reinicio del año escolar el 15 de septiembre</b>.",
     pct_line: "% de la meta · unos 7 € ponen un kit completo en las manos de un niño",
-    fx_note: "La meta oficial de la campaña es CHF 10.000; los importes en € / $ son aproximados.",
+    fx_note: "", // set dynamically with the live rate
     updated_label: "Última actualización:",
     donate_h: "Dona desde 1 € / 1 $",
     donate_p: "Cada aporte cuenta, por pequeño que sea. Aceptamos Bizum, efectivo y transferencia — escríbenos y te enviamos los datos en un minuto.",
@@ -239,11 +244,33 @@ const I18N = {
     footer2: "Julio 2026",
     poster_href: "cartel-kits-escolares-venezuela-suiza.pdf",
     html_title: "Kits escolares para Venezuela — Dona",
-    raised_txt: n => n.toLocaleString("es-ES") + " € / $ recaudados",
-    goal_txt: n => "de una meta de " + n.toLocaleString("es-ES") + " € / $",
+    raised_txt: n => "≈ " + toEUR(n) + " € · " + toUSD(n) + " $ recaudados",
+    goal_txt: n => "de una meta de CHF " + n.toLocaleString("es-ES") + " (≈ " + toEUR(n) + " € · " + toUSD(n) + " $)",
     btn: "EN"
   }
 };
+
+const round10 = n => Math.round(n / 10) * 10;
+const toEUR = chf => round10(chf * FX.EUR).toLocaleString("es-ES");
+const toUSD = chf => round10(chf * FX.USD).toLocaleString("es-ES");
+
+function fxNoteText() {
+  const src = FX.date ? "tipo de cambio BCE del " + FX.date : "tipo de cambio aproximado";
+  return "Recaudación en francos suizos (CHF " + RAISED_CHF.toLocaleString("es-ES") +
+         " de CHF " + GOAL_CHF.toLocaleString("es-ES") + "); conversión a € y $ al " + src + ".";
+}
+
+async function fetchRates() {
+  try {
+    const r = await fetch("https://api.frankfurter.app/latest?base=CHF&symbols=EUR,USD");
+    const d = await r.json();
+    if (d && d.rates && d.rates.EUR && d.rates.USD) {
+      FX = { EUR: d.rates.EUR, USD: d.rates.USD,
+             date: new Date(d.date + "T12:00:00").toLocaleDateString("es-ES", {day:"numeric", month:"long", year:"numeric"}) };
+      render();
+    }
+  } catch (e) { /* fallback FX stays */ }
+}
 
 let lang = new URLSearchParams(location.search).get("lang") === "es" ? "es" : "en";
 
@@ -262,6 +289,7 @@ function render() {
   document.getElementById("poster-a").href = t.poster_href;
   document.getElementById("pay-en").style.display = lang === "en" ? "" : "none";
   document.getElementById("pay-es").style.display = lang === "es" ? "" : "none";
+  document.getElementById("fx-note").textContent = fxNoteText();
   document.getElementById("fx-note").style.display = lang === "es" ? "block" : "none";
   document.getElementById("local-currency").style.display = lang === "es" ? "block" : "none";
   const pct = Math.min(100, Math.round(RAISED_CHF / GOAL_CHF * 100));
@@ -279,6 +307,7 @@ function toggleLang() {
 }
 
 render();
+fetchRates();
 </script>
 
 </body>
