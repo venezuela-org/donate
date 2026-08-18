@@ -1,6 +1,6 @@
 # Donate — School kits for Venezuela
 
-Public donation-progress page for the joint Creative Commons Venezuela + Creative Commons Switzerland school-kits campaign.
+Public donation-progress page for the school-kits campaign led by Creative Commons Venezuela, with solidarity from donors and friends in Switzerland and elsewhere.
 
 Live at: **https://venezuela-org.github.io/donate/**
 
@@ -9,9 +9,9 @@ Live at: **https://venezuela-org.github.io/donate/**
 Open `index.html`, find this block near the bottom:
 
 ```js
-const RAISED_CHF  = 2000;
+const RAISED_CHF  = 2275;
 const GOAL_CHF    = 10000;
-const LAST_UPDATE = "14 July 2026";
+const LAST_UPDATE = { en: "19 August 2026", es: "19 de agosto de 2026" };
 ```
 
 Change the numbers and the date, then:
@@ -39,7 +39,7 @@ git push -u origin main
 
 ## Contents — all public-safe
 
-Only campaign material: the page, the two kit images, and the poster PDF. No names, no locations, no coordination data (per the data-classification rules in the private plan).
+Only public campaign material: the bilingual page, the real cartuchera photo, the kit illustrations, and the TWINT image. Creative Commons Venezuela remains identified as the campaign organizer; the Venezuelan and Swiss flags recognize the solidarity connecting both countries without presenting Creative Commons Switzerland as an organizer.
 
 ## Honesty rule
 
