@@ -1,6 +1,6 @@
 # Donate — School kits for Venezuela
 
-Public donation-progress page for the school-kits campaign led by Creative Commons Venezuela, with solidarity from donors and friends in Switzerland and elsewhere.
+Public donation-progress page for the school-kits campaign organized by Creative Commons Venezuela, with solidarity connecting Venezuela and Switzerland.
 
 Live at: **https://venezuela-org.github.io/donate/**
 
@@ -39,7 +39,7 @@ git push -u origin main
 
 ## Contents — all public-safe
 
-Only public campaign material: the bilingual page, the real cartuchera photo, the kit illustrations, and the TWINT image. Creative Commons Venezuela remains identified as the campaign organizer; the Venezuelan and Swiss flags recognize the solidarity connecting both countries without presenting Creative Commons Switzerland as an organizer.
+Only public campaign material: the page, the two kit illustrations, the real pencil-case photo, and the TWINT image.
 
 ## Honesty rule
 
