@@ -49,6 +49,9 @@
   .status-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
   .status-item{background:#F7F9FC;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:12.5px;color:#39415F;}
   .status-item strong{display:block;color:var(--navy);font-size:18px;line-height:1.15;margin-bottom:2px;}
+  .status-item.done{border-left:4px solid #1D7A5F;}
+  .status-item.moving{border-left:4px solid var(--yellow);}
+  .status-item.pending{border-left:4px solid var(--red);}
   .cartuchera-update{display:flex;gap:16px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
   .cartuchera-update img{width:118px;height:90px;object-fit:cover;border-radius:10px;background:#EEF1F8;}
   .cartuchera-update p{font-size:12.5px;}
@@ -78,6 +81,9 @@
   .kit.basic .tag{color:var(--red);}
   .kit.reuse .tag{color:#1D7A5F;}
   .kit p{font-size:13px;color:#39415F;margin-top:5px;}
+  .kit-piece{min-height:82px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--navy);font-size:12px;font-weight:800;}
+  .kit-piece .icon{font-size:30px;line-height:1.1;margin-bottom:5px;}
+  .kit-piece:last-child{grid-column:1 / -1;}
 
   .note{background:#FFF6DC;border-left:6px solid var(--yellow);border-radius:10px;padding:14px 18px;font-size:14px;color:#4A4326;margin:26px 0;}
   .note b{color:var(--navy);}
@@ -118,17 +124,19 @@
   </div>
 
   <div class="status-card">
-    <span class="badge" data-i18n="status_badge">August update · first 600 kits</span>
-    <p data-i18n="status_p">The first batch is now moving from planning to purchase and production. The materials will be brought together at the <b>Faculty of Sciences, UCV</b>, in Caracas for assembly.</p>
+    <span class="badge" data-i18n="status_badge">September update · first 600 kits</span>
+    <p data-i18n="status_p">The first batch of 600 kits has moved decisively into delivery and assembly. Materials are being brought together at the <b>Faculty of Sciences, UCV</b>, in Caracas.</p>
     <div class="status-grid">
-      <div class="status-item"><strong>600</strong><span data-i18n="status_colours">sets of 12 premium coloured pencils inspected and approved</span></div>
-      <div class="status-item"><strong>2,400</strong><span data-i18n="status_pencils">premium HB graphite pencils inspected and approved</span></div>
-      <div class="status-item"><strong>334 / 600</strong><span data-i18n="status_blocks">large 20-sheet drawing pads secured; 266 still needed</span></div>
-      <div class="status-item"><strong>600</strong><span data-i18n="status_sharpeners">metal sharpeners identified; final purchase confirmation pending</span></div>
+      <div class="status-item done"><strong>100%</strong><span data-i18n="status_colours">coloured-pencil sets and 2,400 HB pencils received and verified</span></div>
+      <div class="status-item moving"><strong>58%</strong><span data-i18n="status_blocks">350 of 600 large, 20-sheet drawing pads received; 250 still needed</span></div>
+      <div class="status-item moving"><strong>78%</strong><span data-i18n="status_cases_short">locally made waterproof pencil cases received</span></div>
+      <div class="status-item done"><strong>100%</strong><span data-i18n="status_sharpeners">sharpeners and erasers received for all 600 kits</span></div>
+      <div class="status-item pending"><strong data-i18n="status_pending">Pending</strong><span data-i18n="status_bags">600 handled bags still to be purchased</span></div>
+      <div class="status-item moving"><strong data-i18n="status_developing">In development</strong><span data-i18n="status_contest">voluntary QR drawing contest in development and successfully tested in pilot; 10 equal winners will receive identical educational super kits</span></div>
     </div>
     <div class="cartuchera-update">
       <img src="cartuchera-real.jpeg" alt="Blue waterproof pencil-case prototype">
-      <p data-i18n="status_cases"><b>600 locally made waterproof pencil cases have been commissioned.</b> The first production payment has been made. Each measures approximately 20 × 14 cm and holds the complete set of pencils, colours and sharpener.</p>
+      <p data-i18n="status_cases"><b>78% of the 600 locally made waterproof pencil cases have already been received.</b> Each measures approximately 20 × 14 cm and keeps the drawing materials together for everyday use.</p>
     </div>
   </div>
 
@@ -182,7 +190,7 @@
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
     <span><span data-i18n="footer1">An initiative of Creative Commons Venezuela 🇻🇪 🇨🇭</span> · <a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener" style="color:inherit;">linkedin.com/in/arturo-sanchez-pineda</a></span>
-    <span data-i18n="footer2">updated: August 2026</span>
+    <span data-i18n="footer2">updated: 10 September 2026</span>
   </div>
 </footer>
 
@@ -212,13 +220,17 @@ const I18N = {
     pct_line: "% funded · about CHF 7 puts a full kit in one child’s hands",
     fx_note: "",
     updated_label: "Last updated:",
-    status_badge: "August update · first 600 kits",
-    status_p: "The first batch is now moving from planning to purchase and production. The materials will be brought together at the <b>Faculty of Sciences, UCV</b>, in Caracas for assembly.",
-    status_colours: "sets of 12 premium coloured pencils inspected and approved",
-    status_pencils: "premium HB graphite pencils inspected and approved",
-    status_blocks: "large 20-sheet drawing pads secured; 266 still needed",
-    status_sharpeners: "metal sharpeners identified; final purchase confirmation pending",
-    status_cases: "<b>600 locally made waterproof pencil cases have been commissioned.</b> The first production payment has been made. Each measures approximately 20 × 14 cm and holds the complete set of pencils, colours and sharpener.",
+    status_badge: "September update · first 600 kits",
+    status_p: "The first batch of 600 kits has moved decisively into delivery and assembly. Materials are being brought together at the <b>Faculty of Sciences, UCV</b>, in Caracas.",
+    status_colours: "coloured-pencil sets and 2,400 HB pencils received and verified",
+    status_blocks: "350 of 600 large, 20-sheet drawing pads received; 250 still needed",
+    status_cases_short: "locally made waterproof pencil cases received",
+    status_sharpeners: "sharpeners and erasers received for all 600 kits",
+    status_pending: "Pending",
+    status_bags: "600 handled bags still to be purchased",
+    status_developing: "In development",
+    status_contest: "voluntary QR drawing contest in development and successfully tested in pilot; 10 equal winners will receive identical educational super kits",
+    status_cases: "<b>78% of the 600 locally made waterproof pencil cases have already been received.</b> Each measures approximately 20 × 14 cm and keeps the drawing materials together for everyday use.",
     donate_h: "Donate from CHF 1",
     donate_p: "Every franc counts. Open your TWINT app, choose “Send”, and enter the number — use the reference so we can track kit donations.",
     local_currency: "",
@@ -227,7 +239,7 @@ const I18N = {
     via: "Donate via",
     ref: "Reference: “School kits Venezuela”",
     buys_h: "What your donation buys",
-    kit1_tag: "First batch · × 600",
+    kit1_tag: "First batch · × 600 (of 1,000 in total)",
     kit1_p: "1 waterproof pencil case · 1 large drawing pad with 20 blank bound sheets · 12 coloured pencils · 4 graphite pencils · 1 metal sharpener",
     kit2_tag: "Reusable pilot kit · × 500",
     kit2_p: "Drawstring bag · pencil case · reusable folder with pocket and clip · 60 white sheets · 12 coloured pencils · 4 graphite pencils · 1 sharpener",
@@ -235,7 +247,7 @@ const I18N = {
     poster_link: "Download the campaign poster (PDF)",
     poster_tail: "— print it, share it, hang it up.",
     footer1: "An initiative of <a href='https://www.linkedin.com/company/creative-commons-venezuela/' target='_blank' rel='noopener' style='color:inherit;'>Creative Commons Venezuela</a> 🇻🇪 🇨🇭",
-    footer2: "update: August 2026",
+    footer2: "updated: 10 September 2026",
     poster_href: "cc-venezuela-switzerland-school-kits-poster.pdf",
     html_title: "School kits for Venezuela — Donate",
     raised_txt: n => "CHF " + n.toLocaleString("de-CH") + " raised",
@@ -244,19 +256,23 @@ const I18N = {
   },
   es: {
     org1: "Creative Commons Venezuela",
-    eyebrow: "Una iniciativa solidaria conjunta · Julio 2026",
+    eyebrow: "Una iniciativa solidaria conjunta · Junio - septiembre de 2026",
     title: "Herramientas para aprender, dibujar y volver a empezar",
     lede: "Material escolar y creativo para <b>1.500 niñas y niños</b> afectados por los recientes terremotos en Venezuela — entregado <b>antes del reinicio del año escolar el 15 de septiembre</b>.",
     pct_line: "% de la meta · unos 7 € ponen un kit completo en las manos de un niño",
     fx_note: "", // set dynamically with the live rate
     updated_label: "Última actualización:",
-    status_badge: "Actualización de agosto · primeros 600 kits",
-    status_p: "La primera tanda ya está pasando de la planificación a la compra y producción. Los materiales se reunirán en la <b>Facultad de Ciencias de la UCV</b>, en Caracas, para armar los kits.",
-    status_colours: "cajas de 12 colores premium inspeccionadas y aprobadas",
-    status_pencils: "lápices de grafito HB premium inspeccionados y aprobados",
-    status_blocks: "blocks grandes de 20 hojas asegurados; todavía faltan 266",
-    status_sharpeners: "sacapuntas metálicos ubicados; falta confirmar la compra final",
-    status_cases: "<b>Las 600 cartucheras impermeables de fabricación local ya fueron encargadas.</b> Se realizó el primer pago de producción. Cada una mide aproximadamente 20 × 14 cm y permite guardar los lápices, colores y el sacapuntas.",
+    status_badge: "Actualización de septiembre · primeros 600 kits",
+    status_p: "La primera tanda de 600 kits avanzó decididamente hacia la entrega y el ensamblaje. Los materiales se están reuniendo en la <b>Facultad de Ciencias de la UCV</b>, en Caracas.",
+    status_colours: "cajas de colores y 2.400 lápices HB recibidos y verificados",
+    status_blocks: "350 de 600 blocs grandes de 20 hojas recibidos; todavía faltan 250",
+    status_cases_short: "cartucheras impermeables de fabricación local recibidas",
+    status_sharpeners: "sacapuntas y borradores recibidos para los 600 kits",
+    status_pending: "Por adquirir",
+    status_bags: "600 bolsas con asa todavía por comprar",
+    status_developing: "En desarrollo",
+    status_contest: "concurso voluntario de dibujo con QR en desarrollo y probado exitosamente en piloto; 10 ganadores iguales recibirán súper kits educativos idénticos",
+    status_cases: "<b>Ya recibimos el 78% de las 600 cartucheras impermeables de fabricación local.</b> Cada una mide aproximadamente 20 × 14 cm y mantiene juntos los materiales de dibujo para su uso diario.",
     donate_h: "Dona desde 1 € / 1 $",
     donate_p: "Cada aporte cuenta, por pequeño que sea. Aceptamos Bizum, efectivo y transferencia — escríbenos y te enviamos los datos en un minuto.",
     local_currency: "¿Quieres ayudar en tu moneda local? Escríbenos por <a href=\"https://www.linkedin.com/in/arturo-sanchez-pineda/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> y te contamos cómo.",
@@ -265,15 +281,15 @@ const I18N = {
     via: "Dona mediante",
     ref: "Referencia: «Kits escolares Venezuela»",
     buys_h: "En qué se convierte tu donación",
-    kit1_tag: "Primera tanda · × 600 (de un total de 1000)",
-    kit1_p: "1 cartuchera impermeable · 1 block grande con 20 hojas blancas unidas · 12 colores · 4 lápices de grafito · 1 sacapuntas metálico",
+    kit1_tag: "Primera tanda · × 600 (de un total de 1.000)",
+    kit1_p: "1 cartuchera impermeable · 1 bloc grande con 20 hojas blancas unidas · 12 colores · 4 lápices de grafito · 1 sacapuntas metálico",
     kit2_tag: "Kit piloto reutilizable · × 500",
     kit2_p: "Bolso sencillo · cartuchera · carpeta reutilizable con bolsillo y pinza · 60 hojas blancas · 12 colores · 4 lápices de grafito · 1 sacapuntas",
     note: "<b>Ayuda práctica, entregada con dignidad.</b> Estos kits ponen materiales útiles directamente en las manos de los niños, alivian un gasto inmediato para sus familias y apoyan el regreso al aprendizaje y a la actividad creativa.",
     poster_link: "Descarga el cartel de la campaña (PDF)",
     poster_tail: "— imprímelo, compártelo, cuélgalo.",
     footer1: "Una iniciativa de <a href='https://www.linkedin.com/company/creative-commons-venezuela/' target='_blank' rel='noopener' style='color:inherit;'>Creative Commons Venezuela</a> 🇻🇪 🇨🇭",
-    footer2: "Julio 2026",
+    footer2: "actualizado: 10 de septiembre de 2026",
     poster_href: "cartel-kits-escolares-venezuela-suiza.pdf",
     html_title: "Kits escolares para Venezuela — Dona",
     raised_txt: n => "≈ " + toEUR(n) + " € · " + toUSD(n) + " $ recaudados",
