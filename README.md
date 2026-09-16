@@ -11,7 +11,7 @@ Open `index.html`, find this block near the bottom:
 ```js
 const RAISED_CHF  = 2275;
 const GOAL_CHF    = 10000;
-const LAST_UPDATE = { en: "19 August 2026", es: "19 de agosto de 2026" };
+const LAST_UPDATE = { en: "16 September 2026", es: "16 de septiembre de 2026" };
 ```
 
 Change the numbers and the date, then:
