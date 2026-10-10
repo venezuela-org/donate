@@ -1,373 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>School kits for Venezuela — Donate</title>
-<meta name="description" content="Help deliver school and drawing kits to children affected by the earthquakes in Venezuela. The first 350 kits are complete, with 250 drawing pads still needed for the current batch.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17265a">
+<title>600 kits to create — Creative Commons Venezuela</title>
+<meta name="description" content="600 educational kits assembled in Venezuela: 509 delivered and 60 drawings received.">
+<meta property="og:title" content="600 kits to create — Creative Commons Venezuela"><meta property="og:description" content="From donations and local production to 600 assembled kits, 509 deliveries and 60 drawings."><meta property="og:image" content="status-509-delivered-en.png">
 <style>
-  :root{
-    --navy:#1B2A5B; --ink:#232B4A; --yellow:#FFC93C; --red:#DA4B3F;
-    --paper:#FDFBF6; --muted:#5A6382; --line:#E3E7F2;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:"Nunito Sans","Segoe UI",system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;}
-  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
-
-  header{background:var(--navy);color:#fff;padding:14px 0;}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;}
-  header .orgs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  header .plus{color:var(--yellow);font-weight:900;}
-  .lang-btn{background:var(--yellow);color:var(--navy);border:none;border-radius:8px;font-weight:900;font-size:12px;letter-spacing:1px;padding:7px 14px;cursor:pointer;font-family:inherit;}
-  .lang-btn:hover{filter:brightness(1.05);}
-  .tri{height:6px;display:flex;}
-  .tri span{flex:1;}
-  .tri span:nth-child(1){background:var(--yellow);}
-  .tri span:nth-child(2){background:var(--red);}
-  .tri span:nth-child(3){background:#4A5C9E;}
-
-  .hero{padding:38px 0 8px;}
-  .eyebrow{color:var(--red);font-weight:800;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;}
-  h1{font-size:clamp(30px,6vw,44px);font-weight:900;color:var(--navy);line-height:1.06;margin:10px 0 12px;}
-  .lede{color:var(--muted);font-size:17px;max-width:600px;}
-  .lede b{color:var(--ink);}
-
-  .progress-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:24px;margin:26px 0;}
-  .amounts{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;}
-  .raised{font-weight:900;font-size:clamp(26px,5vw,36px);color:var(--navy);}
-  .goal{color:var(--muted);font-weight:700;}
-  .bar{height:18px;background:#EEF1F8;border-radius:10px;margin:14px 0 8px;overflow:hidden;}
-  .fill{height:100%;width:0;background:linear-gradient(90deg,var(--yellow),#FFB300);border-radius:10px;transition:width 1.2s ease;}
-  .pct{font-size:13px;color:var(--muted);}
-  .fx-note{font-size:11.5px;color:var(--muted);margin-top:6px;font-style:italic;display:none;}
-  .updated{font-size:12px;color:var(--muted);margin-top:10px;}
-
-  .status-card{background:#fff;border:1.5px solid var(--line);border-left:6px solid #1D7A5F;border-radius:14px;padding:16px 20px;margin:-8px 0 22px;}
-  .status-card .badge{display:inline-block;background:#E3F4EE;color:#1D7A5F;font-weight:800;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;border-radius:6px;padding:4px 10px;margin-bottom:8px;}
-  .status-card p{font-size:14px;color:#39415F;line-height:1.6;}
-  .status-card b{color:var(--navy);}
-  .status-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
-  .status-item{background:#F7F9FC;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:12.5px;color:#39415F;}
-  .status-item strong{display:block;color:var(--navy);font-size:18px;line-height:1.15;margin-bottom:2px;}
-  .status-item.done{border-left:4px solid #1D7A5F;}
-  .status-item.moving{border-left:4px solid var(--yellow);}
-  .status-item.pending{border-left:4px solid var(--red);}
-  .cartuchera-update{display:flex;gap:16px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
-  .cartuchera-update img{width:118px;height:90px;object-fit:cover;border-radius:10px;background:#EEF1F8;}
-  .cartuchera-update p{font-size:12.5px;}
-  .progress-visual{margin:16px auto 0;max-width:430px;text-align:center;}
-  .progress-visual img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);}
-  .progress-visual figcaption{margin-top:7px;color:var(--muted);font-size:11.5px;line-height:1.45;}
-  @media(max-width:520px){.status-grid{grid-template-columns:1fr}.cartuchera-update{align-items:flex-start}.cartuchera-update img{width:96px;height:82px;}}
-  .donate-box{background:var(--navy);border-radius:18px;padding:26px;color:#fff;display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:10px 0 30px;}
-  .donate-box .left{flex:1;min-width:220px;}
-  .donate-box h2{color:var(--yellow);font-size:24px;font-weight:900;}
-  .donate-box p{color:#C9D2EC;font-size:14px;margin-top:6px;}
-  .donate-box .contact a{color:var(--yellow);font-weight:800;text-decoration:none;}
-  .donate-box .contact a:hover{text-decoration:underline;}
-  .paycard{background:#fff;border-radius:14px;padding:16px 22px;text-align:center;color:var(--ink);min-width:230px;}
-  .paycard .via{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
-  .paycard .tw{font-weight:900;font-size:20px;color:var(--navy);}
-  .paycard .num{margin-top:4px;}
-  .paycard .methods{font-weight:900;font-size:17px;color:var(--navy);margin-top:4px;line-height:1.4;}
-  .paycard .mailme{font-weight:800;font-size:13px;margin-top:6px;}
-  .paycard .mailme a{color:var(--red);}
-  .paycard .ref{font-size:11px;color:var(--muted);margin-top:5px;}
-
-  h3{color:var(--navy);font-weight:900;font-size:21px;margin:26px 0 10px;}
-  .kits{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  @media(max-width:620px){.kits{grid-template-columns:1fr;}}
-  .kit{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;}
-  .kit img{width:100%;display:block;background:#F7F8FB;}
-  .kit .body{padding:14px 16px;}
-  .kit .tag{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;}
-  .kit.basic .tag{color:var(--red);}
-  .kit.reuse .tag{color:#1D7A5F;}
-  .kit p{font-size:13px;color:#39415F;margin-top:5px;}
-  .kit-piece{min-height:82px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--navy);font-size:12px;font-weight:800;}
-  .kit-piece .icon{font-size:30px;line-height:1.1;margin-bottom:5px;}
-  .kit-piece:last-child{grid-column:1 / -1;}
-
-  .note{background:#FFF6DC;border-left:6px solid var(--yellow);border-radius:10px;padding:14px 18px;font-size:14px;color:#4A4326;margin:26px 0;}
-  .note b{color:var(--navy);}
-
-  footer{border-top:1.5px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:12.5px;}
+:root{--navy:#17265a;--ink:#253052;--yellow:#ffc72c;--red:#e2473f;--blue:#2589d8;--green:#248264;--paper:#fffdf7;--muted:#626b87;--line:#dfe6f2;--shadow:0 18px 50px #17265a17}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:"Nunito Sans","Segoe UI",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.58}img{max-width:100%}a{color:inherit}.wrap{max-width:1080px;margin:auto;padding:0 24px}.top{background:var(--navy);color:#fff;padding:13px 0;position:sticky;top:0;z-index:10;box-shadow:0 3px 18px #0002}.top .wrap,.nav{display:flex;align-items:center;justify-content:space-between;gap:17px}.brand{text-decoration:none;font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.nav a{text-decoration:none;color:#dce4ff;font-size:12px;font-weight:800}.nav a:hover{color:var(--yellow)}.lang{border:0;border-radius:8px;background:var(--yellow);color:var(--navy);font-weight:900;padding:7px 13px;cursor:pointer}.tri{height:6px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,#2457bb 33.33% 66.66%,var(--red) 66.66%)}
+.hero{padding:68px 0 38px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:46px}.eyebrow,.label{color:var(--red);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(42px,7vw,72px);line-height:.98;color:var(--navy);margin:13px 0 18px;font-weight:950;letter-spacing:-2.5px}h2{font-size:clamp(29px,4.5vw,44px);line-height:1.08;color:var(--navy);font-weight:950;letter-spacing:-1px}h3{color:var(--navy)}.lede,.intro{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:760px}.lede strong{color:var(--ink)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;text-decoration:none;border-radius:12px;padding:12px 17px;font-weight:900;font-size:14px}.primary{background:var(--navy);color:#fff}.secondary{background:#fff;color:var(--navy);border:1.5px solid var(--line)}.hero-art{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:12px;box-shadow:var(--shadow);transform:rotate(1deg)}.hero-art img{display:block;border-radius:16px;width:100%}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 46px}.stat,.panel,.card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 8px 24px #17265a0a}.stat strong{display:block;color:var(--navy);font-size:31px;line-height:1;font-weight:950;margin-bottom:7px}.stat span{font-size:13px;color:var(--muted);font-weight:750}.green{border-top:5px solid var(--green)}.blue{border-top:5px solid var(--blue)}.red{border-top:5px solid var(--red)}.yellow{border-top:5px solid var(--yellow)}section{padding:46px 0}.intro{font-size:17px;margin-top:13px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-top:26px}.meter{margin-top:20px}.meter-head{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:850;color:var(--navy);margin-bottom:8px}.bar{height:18px;background:#edf1f7;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#2088dc,#165db2);width:0;transition:width 1s}.privacy{margin-top:18px;background:#fff5f3;border-left:5px solid var(--red);padding:15px 17px;border-radius:10px;font-size:13px}.visual img{display:block;width:100%;border-radius:18px}.caption{font-size:11.5px;color:var(--muted);margin-top:9px;text-align:center}
+.contest{background:linear-gradient(135deg,#17265a,#243f88);color:#fff}.contest h2{color:#fff}.contest .intro{color:#d4dcf6}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.step{background:#ffffff17;border:1px solid #ffffff26;border-radius:16px;padding:19px}.num{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--navy);font-weight:950;margin-bottom:12px}.step h3{font-size:16px;color:#fff;margin-bottom:5px}.step p{font-size:13px;color:#d4dcf6}.deadline{margin-top:20px;padding:16px 18px;border-radius:12px;background:var(--yellow);color:var(--navy);font-weight:900;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.timeline{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:start;margin-top:27px}.moments{display:grid;gap:12px}.moment{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 17px;display:grid;grid-template-columns:116px 1fr;gap:15px}.moment time{color:var(--red);font-size:11px;font-weight:950;text-transform:uppercase}.moment b{color:var(--navy);display:block}.moment p{font-size:13px;color:var(--muted)}.timeline-poster{position:sticky;top:82px}.timeline-poster img{display:block;border-radius:18px;border:1.5px solid var(--line);box-shadow:var(--shadow)}
+.money{font-size:44px;font-weight:950;color:var(--navy);line-height:1}.money small{display:block;font-size:13px;color:var(--muted);margin-top:9px;font-weight:750}.segments{height:26px;border-radius:99px;overflow:hidden;display:flex;margin:22px 0 15px;background:#edf1f7}.segments span:nth-child(1){width:84%;background:var(--blue)}.segments span:nth-child(2){width:5%;background:var(--yellow)}.segments span:nth-child(3){width:2%;background:var(--red)}.segments span:nth-child(4){width:9%;background:#dde3ee}.legend{display:grid;grid-template-columns:1fr 1fr;gap:10px}.legend div{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}.dot{width:10px;height:10px;border-radius:50%;flex:none}.finance-note{background:#fff8dc;border-radius:18px;padding:22px;border:1px solid #f3df9b}.finance-note p{font-size:14px;color:#5e563c;margin-top:9px}
+.next{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:27px}.card .icon{font-size:34px}.card h3{font-size:18px;margin:8px 0 6px}.card p{font-size:13.5px;color:var(--muted)}.donate{background:var(--navy);color:#fff;border-radius:25px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin:34px 0 52px}.donate h2{color:var(--yellow);font-size:32px}.donate p{color:#d5ddf7;margin-top:8px}.pay{background:#fff;color:var(--ink);border-radius:16px;padding:18px 22px;text-align:center;min-width:245px}.pay .via{font-size:10px;color:var(--muted);font-weight:900;letter-spacing:1.8px;text-transform:uppercase}.pay .method{font-size:20px;color:var(--navy);font-weight:950}.contact{font-size:13px}.contact a{color:var(--yellow);font-weight:900}footer{border-top:1.5px solid var(--line);padding:24px 0 38px;color:var(--muted);font-size:12.5px}footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:820px){.hero-grid,.grid2,.timeline{grid-template-columns:1fr}.stats,.steps{grid-template-columns:1fr 1fr}.next{grid-template-columns:1fr}.timeline-poster{position:static;max-width:520px;margin:auto}.donate{grid-template-columns:1fr}}@media(max-width:560px){.wrap{padding:0 16px}.nav a{display:none}.hero{padding-top:44px}.stats{gap:9px}.stat{padding:15px}.stat strong{font-size:27px}.steps{grid-template-columns:1fr}.moment{grid-template-columns:1fr;gap:4px}.legend{grid-template-columns:1fr}.timeline-poster{display:none}.donate{padding:24px}.pay{min-width:0}}
 </style>
 </head>
 <body>
+<header class="top"><div class="wrap"><a class="brand" href="#top">Creative Commons Venezuela 🇻🇪</a><nav class="nav"><a href="#progress" data-i18n="nav_progress">Progress</a><a href="#drawings" data-i18n="nav_drawings">Drawings</a><a href="#story" data-i18n="nav_story">Our story</a><a href="#next" data-i18n="nav_next">What comes next</a><button class="lang" id="lang">ES</button></nav></div></header><div class="tri"></div>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow" data-i18n="eyebrow">Caracas and La Guaira · July–October 2026</div><h1 data-i18n="title">600 kits to create</h1><p class="lede" data-i18n="lede">Donations received in Europe, local production in Venezuela, and the extraordinary work of students from the <strong>Faculty of Sciences at UCV</strong>.</p><div class="actions"><a class="btn primary" href="#progress" data-i18n="see">See the results</a><a class="btn secondary" href="#support" data-i18n="support">Support the next cycle</a></div></div><figure class="hero-art"><img id="status-img" src="status-509-delivered-en.png" alt="Project status poster"></figure></div></section>
+<div class="wrap"><div class="stats"><div class="stat green"><strong>600</strong><span data-i18n="s1">kits assembled · 100%</span></div><div class="stat blue"><strong>509</strong><span data-i18n="s2">kits delivered · 85%</span></div><div class="stat red"><strong>60</strong><span data-i18n="s3">drawings received through the QR codes</span></div><div class="stat yellow"><strong>91</strong><span data-i18n="s4">kits remaining for delivery</span></div></div></div>
 
-<header>
-  <div class="wrap">
-    <div class="orgs">
-      <a href="https://www.linkedin.com/company/creative-commons-venezuela/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" data-i18n="org1">Creative Commons Venezuela</a>
-      <span aria-label="Venezuela and Switzerland">🇻🇪 🇨🇭</span>
-    </div>
-    <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">ES</button>
-  </div>
-</header>
-<div class="tri"><span></span><span></span><span></span></div>
+<section id="progress"><div class="wrap"><div class="label" data-i18n="pl">Current status</div><h2 data-i18n="pt">The first 600 kits are ready</h2><p class="intro" data-i18n="pi">Every component and unique QR invitation has been received, checked and assembled in Caracas.</p><div class="grid2"><div class="panel"><h3 data-i18n="dh">Delivery progress</h3><div class="meter"><div class="meter-head"><span data-i18n="dc">509 of 600 kits delivered</span><strong>85%</strong></div><div class="bar"><div class="fill" id="delivery"></div></div></div><p class="intro" style="font-size:14px" data-i18n="dp">The remaining 91 kits are being coordinated with local organisations for delivery during the coming week.</p><div class="privacy" data-i18n="privacy"><strong>Privacy first.</strong> Public documentation shows kits, drawings, hands and spaces—not children’s faces or identifying information.</div></div><figure class="visual"><img src="kit-assembly-100.jpg" alt="Kits assembled at UCV"><figcaption class="caption" data-i18n="cap">Students and volunteers at the Faculty of Sciences, UCV, assembled and organised the kits locally.</figcaption></figure></div></div></section>
 
-<div class="wrap">
+<section id="drawings" class="contest"><div class="wrap"><div class="label" style="color:var(--yellow)" data-i18n="cl">The invitation continues</div><h2 data-i18n="ct">The kit is the beginning, not the end</h2><p class="intro" data-i18n="ci">Each kit includes one unique QR invitation. Children may share a drawing voluntarily with the help of an adult. The portal will remain open permanently.</p><div class="steps"><div class="step"><span class="num">1</span><h3 data-i18n="a1">Scan</h3><p data-i18n="b1">Open the unique QR included in the kit.</p></div><div class="step"><span class="num">2</span><h3 data-i18n="a2">Photograph or upload</h3><p data-i18n="b2">Take a photo or choose one already taken.</p></div><div class="step"><span class="num">3</span><h3 data-i18n="a3">Share voluntarily</h3><p data-i18n="b3">No surname, school, address or document is requested.</p></div><div class="step"><span class="num">4</span><h3 data-i18n="a4">Celebrate creativity</h3><p data-i18n="b4">A diverse jury will select ten drawings for equal prizes.</p></div></div><div class="deadline"><span data-i18n="deadline"><strong>Contest deadline:</strong> 30 November 2026</span><span data-i18n="open">Portal open permanently · 60 drawings received so far</span></div></div></section>
 
-  <div class="hero">
-    <div class="eyebrow" data-i18n="eyebrow">A joint solidarity initiative · June - September 2026</div>
-    <h1 data-i18n="title">Tools to learn, draw and begin again</h1>
-    <p class="lede" data-i18n="lede">School and creative materials for <b>1,500 children</b> affected by the recent earthquakes in Venezuela. The first <b>350 complete kits are now ready</b>.</p>
-  </div>
+<section id="story"><div class="wrap"><div class="label" data-i18n="sl">How it happened</div><h2 data-i18n="st">From an idea to 600 kits</h2><p class="intro" data-i18n="si">A local chain of research, production, verification, volunteer work, technology and community partnerships.</p><div class="timeline"><div class="moments"><article class="moment"><time data-i18n="d1">July–August</time><div><b data-i18n="h1x">Idea and fundraising</b><p data-i18n="p1">Donors in Europe and Creative Commons Venezuela set a concrete target of 600 kits.</p></div></article><article class="moment"><time data-i18n="d2">August</time><div><b data-i18n="h2x">Design and suppliers</b><p data-i18n="p2">We compare dimensions, prices and availability and reject unsuitable materials.</p></div></article><article class="moment"><time data-i18n="d3">August–September</time><div><b data-i18n="h3x">Local production and UCV team</b><p data-i18n="p3">Six hundred pencil cases are made in Venezuela while students receive and verify supplies.</p></div></article><article class="moment"><time data-i18n="d4">September</time><div><b data-i18n="h4x">Platform and QR codes</b><p data-i18n="p4">A privacy-conscious system connects each kit with one optional drawing.</p></div></article><article class="moment"><time data-i18n="d5">September–October</time><div><b data-i18n="h5x">Assembly</b><p data-i18n="p5">All materials arrive and the team completes 600 of 600 kits.</p></div></article><article class="moment"><time data-i18n="d6">3–10 October</time><div><b data-i18n="h6x">Delivery and response</b><p data-i18n="p6">509 kits reach children and 60 drawings return through the QR invitations.</p></div></article></div><figure class="timeline-poster"><img id="chronology-img" src="chronology-es.png" alt="Project chronology poster"></figure></div></div></section>
 
-  <div class="progress-card">
-    <div class="amounts">
-      <div class="raised"><span id="raised-txt"></span></div>
-      <div class="goal"><span id="goal-txt"></span></div>
-    </div>
-    <div class="bar"><div class="fill" id="fill"></div></div>
-    <div class="pct"><span id="pct">0</span><span data-i18n="pct_line">% funded · about CHF 7 puts a full kit in one child’s hands</span></div>
-    <div class="fx-note" id="fx-note" data-i18n="fx_note"></div>
-    <div class="updated"><span data-i18n="updated_label">Last updated:</span> <span id="updated"></span></div>
-  </div>
+<section><div class="wrap"><div class="label" data-i18n="fl">Transparent use of resources</div><h2 data-i18n="ft">How the first cycle was financed</h2><div class="grid2"><div class="panel"><div class="money" data-i18n="money">US$2,800 raised<small>Public reference value for the first cycle</small></div><div class="segments"><span></span><span></span><span></span><span></span></div><div class="legend"><div><i class="dot" style="background:var(--blue)"></i><span data-i18n="f1">84% purchases</span></div><div><i class="dot" style="background:var(--yellow)"></i><span data-i18n="f2">5% fees and exchange</span></div><div><i class="dot" style="background:var(--red)"></i><span data-i18n="f3">2% logistics</span></div><div><i class="dot" style="background:#cbd3e1"></i><span data-i18n="f4">9% reserved for prizes</span></div></div></div><div class="finance-note"><h3 data-i18n="fh">91% has already become materials and deliveries</h3><p data-i18n="fp">The remaining 9% is reserved for ten equal prize kits and the close of the drawing invitation. Volunteer hours contributed by the UCV student team are not included.</p></div></div></div></section>
 
-  <div class="status-card">
-    <span class="badge" data-i18n="status_badge">September update · 350 kits assembled</span>
-    <p data-i18n="status_p">All 350 kits supported by the drawing pads currently available have now been assembled at the <b>Faculty of Sciences, UCV</b>, in Caracas. Only 250 additional drawing pads are needed to complete the full batch of 600.</p>
-    <div class="status-grid">
-      <div class="status-item moving"><strong>58%</strong><span data-i18n="status_assembled">350 of 600 complete kits assembled</span></div>
-      <div class="status-item done"><strong>100%</strong><span data-i18n="status_colours">coloured-pencil sets and 2,400 HB pencils received and verified</span></div>
-      <div class="status-item moving"><strong>58%</strong><span data-i18n="status_blocks">350 of 600 large, 20-sheet drawing pads received; 250 still needed</span></div>
-      <div class="status-item done"><strong>100%</strong><span data-i18n="status_cases_short">locally made waterproof pencil cases received</span></div>
-      <div class="status-item done"><strong>100%</strong><span data-i18n="status_sharpeners">sharpeners and erasers received for all 600 kits</span></div>
-      <div class="status-item done"><strong>100%</strong><span data-i18n="status_bags">bags received for all 600 kits</span></div>
-      <div class="status-item done"><strong>100%</strong><span data-i18n="status_developing">QR ready</strong><span data-i18n="status_contest">the secure drawing form is ready and all 600 unique QR codes have been printed</span></div>
-    </div>
-    <div class="cartuchera-update">
-      <img src="kit-assembly-100.jpg" alt="Educational kit assembled at UCV in Caracas">
-      <p data-i18n="status_cases"><b>All 350 currently available kits are assembled.</b> Each includes a drawing pad, 12 coloured pencils, four HB pencils, a sharpener, an eraser, a locally made waterproof pencil case, a bag and its unique QR invitation.</p>
-    </div>
-    <figure class="progress-visual">
-      <img src="progress-overview-september-16.png" alt="Illustrated progress overview showing 350 of 600 educational kits assembled">
-      <figcaption data-i18n="status_visual_caption">Current overview: 350 of the 600 kits are complete. The remaining materials are ready; only 250 drawing pads are still needed.</figcaption>
-    </figure>
-  </div>
+<section id="next"><div class="wrap"><div class="label" data-i18n="nl">The larger programme</div><h2 data-i18n="nt">What happens after kit number 600?</h2><p class="intro" data-i18n="ni">The first batch proves that the model can work. Now we want to complete the creative cycle and prepare a new batch before the end of the year.</p><div class="next"><article class="card"><div class="icon">🎨</div><h3 data-i18n="n1h">Drawings, jury and prizes</h3><p data-i18n="n1p">Engage families, form a diverse jury and select ten drawings across ages and experiences.</p></article><article class="card"><div class="icon">🖼️</div><h3 data-i18n="n2h">A public exhibition</h3><p data-i18n="n2p">With explicit permission, create a digital and travelling exhibition without exposing children’s identities.</p></article><article class="card"><div class="icon">🔁</div><h3 data-i18n="n3h">A repeatable programme</h3><p data-i18n="n3p">Reconnect donors, students, local producers, organisations and communities, improving every cycle.</p></article></div></div></section>
 
-  <div class="donate-box">
-    <div class="left">
-      <h2 data-i18n="donate_h">Donate from CHF 1</h2>
-      <p data-i18n="donate_p">Every franc counts. Open your TWINT app, choose “Send”, and enter the number — use the reference so we can track kit donations.</p>
-      <p class="contact" id="local-currency" style="display:none;" data-i18n="local_currency"></p>
-      <p class="contact"><span data-i18n="contact_label">Questions or larger donations:</span> <a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener">LinkedIn — Arturo Sánchez Pineda</a><br><span data-i18n="org_follow">Follow the initiative:</span> <a href="https://www.linkedin.com/company/creative-commons-venezuela/" target="_blank" rel="noopener">LinkedIn — Creative Commons Venezuela</a></p>
-    </div>
-    <!-- EN payment card: TWINT -->
-    <div class="paycard" id="pay-en">
-      <div class="via" data-i18n="via">Donate via</div>
-      <div class="tw">TWINT</div>
-      <div class="num"><img src="twint-number.png" alt="TWINT donation number — see campaign poster" style="height:24px;display:block;margin:4px auto 0;"></div>
-      <div class="ref" data-i18n="ref">Reference: “School kits Venezuela”</div>
-    </div>
-    <!-- ES payment card: Bizum / Efectivo / Transferencia -->
-    <div class="paycard" id="pay-es" style="display:none;">
-      <div class="via">Dona mediante</div>
-      <div class="methods">Bizum · Efectivo · Transferencia</div>
-      <div class="mailme">Escríbenos para los datos:<br><a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener">LinkedIn: Arturo Sánchez Pineda</a></div>
-      <div class="ref">Referencia: «Kits escolares Venezuela»</div>
-    </div>
-  </div>
-
-  <h3 data-i18n="buys_h">What your donation buys</h3>
-  <div class="kits">
-    <div class="kit basic">
-      <img src="kit-basic.png" alt="Basic kit contents">
-      <div class="body">
-        <div class="tag" data-i18n="kit1_tag">First batch · × 600 (of 1000 in total)</div>
-        <p data-i18n="kit1_p">1 waterproof pencil case · 1 large drawing pad with 20 blank bound sheets · 12 coloured pencils · 4 graphite pencils · 1 metal sharpener</p>
-      </div>
-    </div>
-    <div class="kit reuse">
-      <img src="kit-reusable.png" alt="Reusable kit contents">
-      <div class="body">
-        <div class="tag" data-i18n="kit2_tag">Reusable pilot kit · × 500</div>
-        <p data-i18n="kit2_p">Drawstring bag · pencil case · reusable folder with pocket and clip · 60 white sheets · 12 coloured pencils · 4 graphite pencils · 1 sharpener</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="note" data-i18n="note">
-    <b>Practical help, delivered with dignity.</b> These kits place useful materials directly in children’s hands, ease an immediate cost for their families, and support a return to learning and creative activity.
-  </div>
-
-</div>
-
-<footer>
-  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-    <span><span data-i18n="footer1">An initiative of Creative Commons Venezuela 🇻🇪 🇨🇭</span> · <a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener" style="color:inherit;">linkedin.com/in/arturo-sanchez-pineda</a></span>
-    <span data-i18n="footer2">updated: 16 September 2026</span>
-  </div>
-</footer>
-
+<section id="support" style="padding-bottom:0"><div class="wrap"><div class="donate"><div><h2 data-i18n="supportTitle">Help us prepare the next batch</h2><p data-i18n="supportCopy">The first 600 kits are funded and assembled. New contributions will support the prizes, documentation and the next production cycle.</p><p class="contact"><span data-i18n="questions">Questions or larger contributions:</span> <a href="https://www.linkedin.com/in/arturo-sanchez-pineda/" target="_blank" rel="noopener">Arturo Sánchez Pineda</a><br><span data-i18n="follow">Follow the project:</span> <a href="https://www.linkedin.com/company/creative-commons-venezuela/" target="_blank" rel="noopener">Creative Commons Venezuela</a></p></div><div class="pay" id="pay-en"><div class="via">Donate via</div><div class="method">TWINT</div><img src="twint-number.png" alt="TWINT donation number" style="height:24px;width:auto;margin:4px auto;display:block"><div class="ref">Reference: “School kits Venezuela”</div></div><div class="pay" id="pay-es" hidden><div class="via">Dona mediante</div><div class="method">Bizum · Efectivo · Transferencia</div><div class="ref">Escríbenos por LinkedIn para recibir los datos.</div></div></div></div></section>
+</main>
+<footer><div class="wrap"><span data-i18n="foot1">Coordinated by Creative Commons Venezuela with students and volunteers from the Faculty of Sciences, UCV.</span><span data-i18n="foot2">Updated 10 October 2026</span></div></footer>
 <script>
-/* ============================================================
-   EDIT ONLY THESE THREE LINES when new donations arrive,
-   then commit and push. Everything else updates automatically.
-   (Amounts are in CHF; the Spanish view shows the same figures
-   labelled €/$ as an approximation.)
-   ============================================================ */
-const RAISED_CHF  = 2275;
-const GOAL_CHF    = 10000;
-const LAST_UPDATE = { en: "16 September 2026", es: "16 de septiembre de 2026" };
-/* ============================================================
-   FX fallback (used if the live rate fetch fails). The Spanish
-   view converts CHF to real EUR/USD with the ECB rate, fetched
-   live from frankfurter.app on every visit.
-   ============================================================ */
-let FX = { EUR: 1.071, USD: 1.23, date: null };
-
-const I18N = {
-  en: {
-    org1: "Creative Commons Venezuela",
-    eyebrow: "A joint solidarity initiative · June - September 2026",
-    title: "Tools to learn, draw and begin again",
-    lede: "School and creative materials for <b>1,500 children</b> affected by the recent earthquakes in Venezuela. The first <b>350 complete kits are now ready</b>.",
-    pct_line: "% funded · about CHF 7 puts a full kit in one child’s hands",
-    fx_note: "",
-    updated_label: "Last updated:",
-    status_badge: "September update · 350 kits assembled",
-    status_p: "All 350 kits supported by the drawing pads currently available have now been assembled at the <b>Faculty of Sciences, UCV</b>, in Caracas. Only 250 additional drawing pads are needed to complete the full batch of 600.",
-    status_assembled: "350 of 600 complete kits assembled",
-    status_colours: "coloured-pencil sets and 2,400 HB pencils received and verified",
-    status_blocks: "350 of 600 large, 20-sheet drawing pads received; 250 still needed",
-    status_cases_short: "locally made waterproof pencil cases received",
-    status_sharpeners: "sharpeners and erasers received for all 600 kits",
-    status_pending: "Pending",
-    status_bags: "bags received for all 600 kits",
-    status_developing: "QR ready",
-    status_contest: "the secure drawing form is ready and all 600 unique QR codes have been printed",
-    status_cases: "<b>All 350 currently available kits are assembled.</b> Each includes a drawing pad, 12 coloured pencils, four HB pencils, a sharpener, an eraser, a locally made waterproof pencil case, a bag and its unique QR invitation.",
-    status_visual_caption: "Current overview: 350 of the 600 kits are complete. The remaining materials are ready; only 250 drawing pads are still needed.",
-    donate_h: "Donate from CHF 1",
-    donate_p: "Every franc counts. Open your TWINT app, choose “Send”, and enter the number — use the reference so we can track kit donations.",
-    local_currency: "",
-    contact_label: "Questions or larger donations:",
-    org_follow: "Follow the initiative:",
-    via: "Donate via",
-    ref: "Reference: “School kits Venezuela”",
-    buys_h: "What your donation buys",
-    kit1_tag: "First batch · × 600 (of 1,000 in total)",
-    kit1_p: "1 waterproof pencil case · 1 large drawing pad with 20 blank bound sheets · 12 coloured pencils · 4 graphite pencils · 1 metal sharpener · 1 eraser · 1 bag",
-    kit2_tag: "Reusable pilot kit · × 500",
-    kit2_p: "Drawstring bag · pencil case · reusable folder with pocket and clip · 60 white sheets · 12 coloured pencils · 4 graphite pencils · 1 sharpener",
-    note: "<b>Practical help, delivered with dignity.</b> These kits place useful materials directly in children’s hands, ease an immediate cost for their families, and support a return to learning and creative activity.",
-    poster_link: "Download the campaign poster (PDF)",
-    poster_tail: "— print it, share it, hang it up.",
-    footer1: "An initiative of <a href='https://www.linkedin.com/company/creative-commons-venezuela/' target='_blank' rel='noopener' style='color:inherit;'>Creative Commons Venezuela</a> 🇻🇪 🇨🇭",
-    footer2: "updated: 16 September 2026",
-    poster_href: "cc-venezuela-switzerland-school-kits-poster.pdf",
-    html_title: "School kits for Venezuela — Donate",
-    raised_txt: n => "CHF " + n.toLocaleString("de-CH") + " raised",
-    goal_txt: n => "of CHF " + n.toLocaleString("de-CH") + " goal",
-    btn: "ES"
-  },
-  es: {
-    org1: "Creative Commons Venezuela",
-    eyebrow: "Una iniciativa solidaria conjunta · Junio - septiembre de 2026",
-    title: "Herramientas para aprender, dibujar y volver a empezar",
-    lede: "Material escolar y creativo para <b>1.500 niñas y niños</b> afectados por los recientes terremotos en Venezuela. Los primeros <b>350 kits completos ya están listos</b>.",
-    pct_line: "% de la meta · unos 7 € ponen un kit completo en las manos de un niño",
-    fx_note: "", // set dynamically with the live rate
-    updated_label: "Última actualización:",
-    status_badge: "Actualización de septiembre · 350 kits armados",
-    status_p: "Ya terminamos los 350 kits que permiten los blocs disponibles, armados en la <b>Facultad de Ciencias de la UCV</b>, en Caracas. Solo faltan 250 blocs adicionales para completar la tanda de 600.",
-    status_assembled: "350 de 600 kits completos ya armados",
-    status_colours: "cajas de colores y 2.400 lápices HB recibidos y verificados",
-    status_blocks: "350 de 600 blocs grandes de 20 hojas recibidos; todavía faltan 250",
-    status_cases_short: "cartucheras impermeables de fabricación local recibidas",
-    status_sharpeners: "sacapuntas y borradores recibidos para los 600 kits",
-    status_pending: "Por adquirir",
-    status_bags: "bolsas recibidas para los 600 kits",
-    status_developing: "QR listos",
-    status_contest: "el formulario seguro para compartir los dibujos está listo y los 600 códigos QR únicos ya fueron impresos",
-    status_cases: "<b>Ya están armados los 350 kits actualmente disponibles.</b> Cada uno incluye un bloc, 12 colores, cuatro lápices HB, sacapuntas, borrador, cartuchera impermeable de fabricación local, bolsa y su invitación QR única.",
-    status_visual_caption: "Resumen actual: 350 de los 600 kits están completos. Los demás materiales están listos; solo faltan 250 blocs.",
-    donate_h: "Dona desde 1 € / 1 $",
-    donate_p: "Cada aporte cuenta, por pequeño que sea. Aceptamos Bizum, efectivo y transferencia — escríbenos y te enviamos los datos en un minuto.",
-    local_currency: "¿Quieres ayudar en tu moneda local? Escríbenos por <a href=\"https://www.linkedin.com/in/arturo-sanchez-pineda/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> y te contamos cómo.",
-    contact_label: "Preguntas o donaciones mayores:",
-    org_follow: "Sigue la iniciativa:",
-    via: "Dona mediante",
-    ref: "Referencia: «Kits escolares Venezuela»",
-    buys_h: "En qué se convierte tu donación",
-    kit1_tag: "Primera tanda · × 600 (de un total de 1.000)",
-    kit1_p: "1 cartuchera impermeable · 1 bloc grande con 20 hojas blancas unidas · 12 colores · 4 lápices de grafito · 1 sacapuntas metálico · 1 borrador · 1 bolsa",
-    kit2_tag: "Kit piloto reutilizable · × 500",
-    kit2_p: "Bolso sencillo · cartuchera · carpeta reutilizable con bolsillo y pinza · 60 hojas blancas · 12 colores · 4 lápices de grafito · 1 sacapuntas",
-    note: "<b>Ayuda práctica, entregada con dignidad.</b> Estos kits ponen materiales útiles directamente en las manos de los niños, alivian un gasto inmediato para sus familias y apoyan el regreso al aprendizaje y a la actividad creativa.",
-    poster_link: "Descarga el cartel de la campaña (PDF)",
-    poster_tail: "— imprímelo, compártelo, cuélgalo.",
-    footer1: "Una iniciativa de <a href='https://www.linkedin.com/company/creative-commons-venezuela/' target='_blank' rel='noopener' style='color:inherit;'>Creative Commons Venezuela</a> 🇻🇪 🇨🇭",
-    footer2: "actualizado: 16 de septiembre de 2026",
-    poster_href: "cartel-kits-escolares-venezuela-suiza.pdf",
-    html_title: "Kits escolares para Venezuela — Dona",
-    raised_txt: n => "≈ " + toEUR(n) + " € · " + toUSD(n) + " $ recaudados",
-    goal_txt: n => "de una meta de CHF " + n.toLocaleString("es-ES") + " (≈ " + toEUR(n) + " € · " + toUSD(n) + " $)",
-    btn: "EN"
-  }
-};
-
-const round10 = n => Math.round(n / 10) * 10;
-const toEUR = chf => round10(chf * FX.EUR).toLocaleString("es-ES");
-const toUSD = chf => round10(chf * FX.USD).toLocaleString("es-ES");
-
-function fxNoteText() {
-  const src = FX.date ? "tipo de cambio BCE del " + FX.date : "tipo de cambio aproximado";
-  return "Recaudación en francos suizos (CHF " + RAISED_CHF.toLocaleString("es-ES") +
-         " de CHF " + GOAL_CHF.toLocaleString("es-ES") + "); conversión a € y $ al " + src + ".";
-}
-
-async function fetchRates() {
-  try {
-    const r = await fetch("https://api.frankfurter.app/latest?base=CHF&symbols=EUR,USD");
-    const d = await r.json();
-    if (d && d.rates && d.rates.EUR && d.rates.USD) {
-      FX = { EUR: d.rates.EUR, USD: d.rates.USD,
-             date: new Date(d.date + "T12:00:00").toLocaleDateString("es-ES", {day:"numeric", month:"long", year:"numeric"}) };
-      render();
-    }
-  } catch (e) { /* fallback FX stays */ }
-}
-
-let lang = new URLSearchParams(location.search).get("lang") === "es" ? "es" : "en";
-
-function render() {
-  const t = I18N[lang];
-  document.documentElement.lang = lang;
-  document.title = t.html_title;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const k = el.getAttribute("data-i18n");
-    if (t[k] !== undefined) el.innerHTML = t[k];
-  });
-  document.getElementById("raised-txt").textContent = t.raised_txt(RAISED_CHF);
-  document.getElementById("goal-txt").textContent   = t.goal_txt(GOAL_CHF);
-  document.getElementById("updated").textContent    = LAST_UPDATE[lang];
-  document.getElementById("lang-toggle").textContent = t.btn;
-  document.getElementById("pay-en").style.display = lang === "en" ? "" : "none";
-  document.getElementById("pay-es").style.display = lang === "es" ? "" : "none";
-  document.getElementById("fx-note").textContent = fxNoteText();
-  document.getElementById("fx-note").style.display = lang === "es" ? "block" : "none";
-  document.getElementById("local-currency").style.display = lang === "es" ? "block" : "none";
-  const pct = Math.min(100, Math.round(RAISED_CHF / GOAL_CHF * 100));
-  document.getElementById("pct").textContent = pct;
-  requestAnimationFrame(() => requestAnimationFrame(() =>
-    document.getElementById("fill").style.width = pct + "%"));
-}
-
-function toggleLang() {
-  lang = lang === "en" ? "es" : "en";
-  const u = new URL(location);
-  if (lang === "es") u.searchParams.set("lang", "es"); else u.searchParams.delete("lang");
-  history.replaceState(null, "", u);
-  render();
-}
-
-render();
-fetchRates();
-</script>
-
-</body>
-</html>
+const I18N={en:{nav_progress:"Progress",nav_drawings:"Drawings",nav_story:"Our story",nav_next:"What comes next",eyebrow:"Caracas and La Guaira · July–October 2026",title:"600 kits to create",lede:"Donations received in Europe, local production in Venezuela, and the extraordinary work of students from the <strong>Faculty of Sciences at UCV</strong>.",see:"See the results",support:"Support the next cycle",s1:"kits assembled · 100%",s2:"kits delivered · 85%",s3:"drawings received through the QR codes",s4:"kits remaining for delivery",pl:"Current status",pt:"The first 600 kits are ready",pi:"Every component and unique QR invitation has been received, checked and assembled in Caracas.",dh:"Delivery progress",dc:"509 of 600 kits delivered",dp:"The remaining 91 kits are being coordinated with local organisations for delivery during the coming week.",privacy:"<strong>Privacy first.</strong> Public documentation shows kits, drawings, hands and spaces—not children’s faces or identifying information.",cap:"Students and volunteers at the Faculty of Sciences, UCV, assembled and organised the kits locally.",cl:"The invitation continues",ct:"The kit is the beginning, not the end",ci:"Each kit includes one unique QR invitation. Children may share a drawing voluntarily with the help of an adult. The portal will remain open permanently.",a1:"Scan",b1:"Open the unique QR included in the kit.",a2:"Photograph or upload",b2:"Take a photo or choose one already taken.",a3:"Share voluntarily",b3:"No surname, school, address or document is requested.",a4:"Celebrate creativity",b4:"A diverse jury will select ten drawings for equal prizes.",deadline:"<strong>Contest deadline:</strong> 30 November 2026",open:"Portal open permanently · 60 drawings received so far",sl:"How it happened",st:"From an idea to 600 kits",si:"A local chain of research, production, verification, volunteer work, technology and community partnerships.",d1:"July–August",h1x:"Idea and fundraising",p1:"Donors in Europe and Creative Commons Venezuela set a concrete target of 600 kits.",d2:"August",h2x:"Design and suppliers",p2:"We compare dimensions, prices and availability and reject unsuitable materials.",d3:"August–September",h3x:"Local production and UCV team",p3:"Six hundred pencil cases are made in Venezuela while students receive and verify supplies.",d4:"September",h4x:"Platform and QR codes",p4:"A privacy-conscious system connects each kit with one optional drawing.",d5:"September–October",h5x:"Assembly",p5:"All materials arrive and the team completes 600 of 600 kits.",d6:"3–10 October",h6x:"Delivery and response",p6:"509 kits reach children and 60 drawings return through the QR invitations.",fl:"Transparent use of resources",ft:"How the first cycle was financed",money:"US$2,800 raised<small>Public reference value for the first cycle</small>",f1:"84% purchases",f2:"5% fees and exchange",f3:"2% logistics",f4:"9% reserved for prizes",fh:"91% has already become materials and deliveries",fp:"The remaining 9% is reserved for ten equal prize kits and the close of the drawing invitation. Volunteer hours contributed by the UCV student team are not included.",nl:"The larger programme",nt:"What happens after kit number 600?",ni:"The first batch proves that the model can work. Now we want to complete the creative cycle and prepare a new batch before the end of the year.",n1h:"Drawings, jury and prizes",n1p:"Engage families, form a diverse jury and select ten drawings across ages and experiences.",n2h:"A public exhibition",n2p:"With explicit permission, create a digital and travelling exhibition without exposing children’s identities.",n3h:"A repeatable programme",n3p:"Reconnect donors, students, local producers, organisations and communities, improving every cycle.",supportTitle:"Help us prepare the next batch",supportCopy:"The first 600 kits are funded and assembled. New contributions will support the prizes, documentation and the next production cycle.",questions:"Questions or larger contributions:",follow:"Follow the project:",foot1:"Coordinated by Creative Commons Venezuela with students and volunteers from the Faculty of Sciences, UCV.",foot2:"Updated 10 October 2026",btn:"ES",titleDoc:"600 kits to create — Creative Commons Venezuela"},
+es:{nav_progress:"Avance",nav_drawings:"Dibujos",nav_story:"La historia",nav_next:"Lo que sigue",eyebrow:"Caracas y La Guaira · Julio–octubre de 2026",title:"600 kits para crear",lede:"Donaciones recibidas desde Europa, producción local en Venezuela y el enorme trabajo de estudiantes de la <strong>Facultad de Ciencias de la UCV</strong>.",see:"Ver los resultados",support:"Apoyar la próxima tanda",s1:"kits armados · 100%",s2:"kits entregados · 85%",s3:"dibujos recibidos mediante los QR",s4:"kits pendientes por entregar",pl:"Estado actual",pt:"Los primeros 600 kits están listos",pi:"Todos los componentes y las invitaciones QR únicas fueron recibidos, verificados y armados en Caracas.",dh:"Avance de las entregas",dc:"509 de 600 kits entregados",dp:"Los 91 kits restantes se están coordinando con organizaciones locales para entregarlos durante la próxima semana.",privacy:"<strong>Privacidad primero.</strong> La documentación pública muestra kits, dibujos, manos y espacios, nunca rostros ni información que identifique a los niños.",cap:"Estudiantes y voluntarios de la Facultad de Ciencias de la UCV armaron y organizaron localmente los kits.",cl:"La invitación continúa",ct:"El kit es el comienzo, no el final",ci:"Cada kit incluye una invitación QR única. Los niños pueden compartir voluntariamente un dibujo con ayuda de una persona adulta. El portal permanecerá abierto para siempre.",a1:"Escanear",b1:"Abrir el QR único incluido en el kit.",a2:"Fotografiar o subir",b2:"Tomar una foto o elegir una imagen ya tomada.",a3:"Compartir voluntariamente",b3:"No pedimos apellidos, escuela, dirección ni documentos.",a4:"Celebrar la creatividad",b4:"Un jurado diverso escogerá diez dibujos para premios iguales.",deadline:"<strong>Cierre del concurso:</strong> 30 de noviembre de 2026",open:"Portal abierto permanentemente · 60 dibujos recibidos hasta ahora",sl:"Cómo ocurrió",st:"De una idea a 600 kits",si:"Una cadena local de investigación, producción, verificación, voluntariado, tecnología y alianzas comunitarias.",d1:"Julio–agosto",h1x:"Idea y recaudación",p1:"Donantes en Europa y Creative Commons Venezuela fijan una meta concreta de 600 kits.",d2:"Agosto",h2x:"Diseño y proveedores",p2:"Comparamos medidas, precios y disponibilidad y descartamos materiales inadecuados.",d3:"Agosto–septiembre",h3x:"Producción local y equipo UCV",p3:"Se fabrican 600 cartucheras en Venezuela mientras estudiantes reciben y verifican materiales.",d4:"Septiembre",h4x:"Plataforma y códigos QR",p4:"Un sistema diseñado con privacidad conecta cada kit con un dibujo opcional.",d5:"Septiembre–octubre",h5x:"Armado",p5:"Llegan todos los materiales y el equipo completa 600 de 600 kits.",d6:"3–10 de octubre",h6x:"Entregas y respuesta",p6:"509 kits llegan a los niños y regresan 60 dibujos mediante las invitaciones QR.",fl:"Uso transparente de los recursos",ft:"Cómo se financió el primer ciclo",money:"US$2.800 recaudados<small>Valor público de referencia del primer ciclo</small>",f1:"84% en compras",f2:"5% en comisiones y cambio",f3:"2% en logística",f4:"9% reservado para los premios",fh:"El 91% ya se convirtió en materiales y entregas",fp:"El 9% restante está reservado para diez kits de premio iguales y el cierre del concurso. Las horas de trabajo voluntario aportadas por estudiantes de la UCV no están incluidas.",nl:"El programa más amplio",nt:"¿Qué ocurre después del kit número 600?",ni:"La primera tanda demuestra que el modelo puede funcionar. Ahora queremos completar el ciclo creativo y preparar una nueva tanda antes de terminar el año.",n1h:"Dibujos, jurado y premios",n1p:"Acompañar a las familias, formar un jurado diverso y seleccionar diez dibujos entre distintas edades y experiencias.",n2h:"Una exposición pública",n2p:"Con autorización expresa, crear una exposición digital e itinerante sin revelar la identidad de los niños.",n3h:"Un programa repetible",n3p:"Volver a conectar donantes, estudiantes, productores locales, organizaciones y comunidades, mejorando cada ciclo.",supportTitle:"Ayúdanos a preparar la próxima tanda",supportCopy:"Los primeros 600 kits ya están financiados y armados. Las nuevas contribuciones apoyarán los premios, la documentación y el siguiente ciclo de producción.",questions:"Preguntas o contribuciones mayores:",follow:"Sigue el proyecto:",foot1:"Coordinado por Creative Commons Venezuela junto con estudiantes y voluntarios de la Facultad de Ciencias de la UCV.",foot2:"Actualizado el 10 de octubre de 2026",btn:"EN",titleDoc:"600 kits para crear — Creative Commons Venezuela"}};
+let lang=new URLSearchParams(location.search).get("lang")==="es"?"es":"en";function render(){const t=I18N[lang];document.documentElement.lang=lang;document.title=t.titleDoc;document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.dataset.i18n;if(t[k]!==undefined)e.innerHTML=t[k]});document.getElementById("lang").textContent=t.btn;document.getElementById("status-img").src=lang==="es"?"status-509-delivered-es.png":"status-509-delivered-en.png";document.getElementById("chronology-img").src=lang==="es"?"chronology-es.png":"chronology-en.png";document.getElementById("pay-en").hidden=lang!=="en";document.getElementById("pay-es").hidden=lang!=="es";requestAnimationFrame(()=>document.getElementById("delivery").style.width="84.8333%")};document.getElementById("lang").onclick=()=>{lang=lang==="en"?"es":"en";const u=new URL(location);lang==="es"?u.searchParams.set("lang","es"):u.searchParams.delete("lang");history.replaceState(null,"",u);render()};render();
+</script></body></html>

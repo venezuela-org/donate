@@ -1,46 +1,46 @@
-# Donate — School kits for Venezuela
+# 600 kits para crear
 
-Public donation-progress page for the school-kits campaign organized by Creative Commons Venezuela, with solidarity connecting Venezuela and Switzerland.
+Sitio bilingue de Creative Commons Venezuela para documentar el primer ciclo del programa de kits educativos en Caracas y La Guaira.
 
 Live at: **https://venezuela-org.github.io/donate/**
 
-## Update the amount raised
+## Estado publicado — 10 de octubre de 2026
 
-Open `index.html`, find this block near the bottom:
+- 600 kits armados
+- 509 kits entregados
+- 60 dibujos recibidos mediante los QR
+- 91 kits pendientes de entrega
+- US$2.800 recaudados
+- 84% compras, 5% comisiones y cambio, 2% logistica, 9% reservado para premios
+- Cierre del concurso: 30 de noviembre de 2026
+- El portal para recibir dibujos permanece abierto permanentemente
 
-```js
-const RAISED_CHF  = 2275;
-const GOAL_CHF    = 10000;
-const LAST_UPDATE = { en: "16 September 2026", es: "16 de septiembre de 2026" };
+## Publicacion
+
+Es un sitio estatico sin dependencias ni proceso de compilacion. GitHub Pages publica directamente `index.html`.
+
+```bash
+git add .
+git commit -m "Update project status: 600 assembled, 509 delivered"
+git push origin main
 ```
 
-Change the numbers and the date, then:
+## Vista local
 
-```
-git add index.html
-git commit -m "Update raised amount"
-git push
+```bash
+python3 -m http.server 8000
 ```
 
-The page updates within a minute or two. Nothing else needs editing.
+Abrir:
 
-## Publish (first time only)
+- Ingles: `http://localhost:8000/`
+- Espanol: `http://localhost:8000/?lang=es`
 
-1. Create an empty **public** repo named `donate` in the `venezuela-org` organization (no README, no license — this folder already has everything).
-2. From this folder:
+## Archivos principales
 
-```
-git remote add origin https://github.com/venezuela-org/donate.git
-git push -u origin main
-```
+- `index.html`: pagina completa, estilos, textos bilingues y selector de idioma.
+- `status-509-delivered-es.png` / `status-509-delivered-en.png`: afiches de estado.
+- `chronology-es.png` / `chronology-en.png`: cronologia visual.
+- `docs/cronologia-y-plan-tecnico.md`: cronologia ampliada y plan de continuidad.
 
-3. On GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: main / (root) → Save.**
-4. After a minute, the page is live at https://venezuela-org.github.io/donate/
-
-## Contents — all public-safe
-
-Only public campaign material: the page, the two kit illustrations, the real pencil-case photo, and the TWINT image.
-
-## Honesty rule
-
-Only publish amounts actually received on the TWINT account. Keep `LAST_UPDATE` current — a stale or inflated number costs more trust than a small one.
+Para una futura actualizacion, cambiar juntos los indicadores del encabezado, el progreso de entregas, la fecha del pie y los afiches correspondientes.
