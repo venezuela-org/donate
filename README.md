@@ -42,5 +42,7 @@ Abrir:
 - `status-509-delivered-es.png` / `status-509-delivered-en.png`: afiches de estado.
 - `chronology-es.png` / `chronology-en.png`: cronologia visual.
 - `docs/cronologia-y-plan-tecnico.md`: cronologia ampliada y plan de continuidad.
+- `gallery.html`, `gallery.css`, `gallery.js`, `drawings.json`: prototipo bilingue de la galeria publica.
+- `docs/gallery-data-spec.md`: separacion entre datos publicos y el registro privado de evidencias.
 
 Para una futura actualizacion, cambiar juntos los indicadores del encabezado, el progreso de entregas, la fecha del pie y los afiches correspondientes.

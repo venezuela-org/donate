@@ -1,0 +1,10 @@
+[
+  {"id":"demo-001","title":{"es":"Un lugar para crecer","en":"A place to grow"},"ageGroup":"6–8","location":"Caracas","theme":"nature","symbol":"🌳","published":true},
+  {"id":"demo-002","title":{"es":"Mi comunidad","en":"My community"},"ageGroup":"9–12","location":"La Guaira","theme":"community","symbol":"🏘️","published":true},
+  {"id":"demo-003","title":{"es":"Viaje a las estrellas","en":"Journey to the stars"},"ageGroup":"6–8","location":"Caracas","theme":"future","symbol":"🚀","published":true},
+  {"id":"demo-004","title":{"es":"Colores que vuelan","en":"Flying colours"},"ageGroup":"4–5","location":"Caracas","theme":"free","symbol":"🦋","published":true},
+  {"id":"demo-005","title":{"es":"El mar que cuidamos","en":"The sea we care for"},"ageGroup":"9–12","location":"La Guaira","theme":"nature","symbol":"🐠","published":true},
+  {"id":"demo-006","title":{"es":"Juntos construimos","en":"We build together"},"ageGroup":"13+","location":"Caracas","theme":"community","symbol":"🤝","published":true},
+  {"id":"demo-007","title":{"es":"La ciudad del futuro","en":"The city of the future"},"ageGroup":"9–12","location":"Caracas","theme":"future","symbol":"🌈","published":true},
+  {"id":"demo-008","title":{"es":"Una idea feliz","en":"A happy idea"},"ageGroup":"6–8","location":"La Guaira","theme":"free","symbol":"💛","published":true}
+]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17265a">
+  <title>Galería de la imaginación — Creative Commons Venezuela</title>
+  <meta name="description" content="Dibujos compartidos voluntariamente por participantes del proyecto 600 kits para crear.">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html?lang=es">Creative Commons Venezuela 🇻🇪</a>
+    <nav>
+      <a href="index.html?lang=es" data-i18n="project">Proyecto</a>
+      <a href="#gallery" data-i18n="gallery">Galería</a>
+      <a href="#privacy" data-i18n="privacyNav">Privacidad</a>
+      <button id="lang" type="button">EN</button>
+    </nav>
+  </header>
+  <div class="flag-line"></div>
+
+  <main>
+    <section class="hero">
+      <div class="brushes" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="eyebrow" data-i18n="eyebrow">600 kits para crear · La imaginación regresa</p>
+      <h1 data-i18n="title">La pared de la imaginación</h1>
+      <p class="lead" data-i18n="lead">Cada dibujo es una pequeña ventana a lo que niñas y niños imaginan cuando reciben papel, colores y libertad para crear.</p>
+      <div class="hero-stats">
+        <div><strong>60</strong><span data-i18n="received">dibujos recibidos</span></div>
+        <div><strong>509</strong><span data-i18n="delivered">kits entregados</span></div>
+        <div><strong>30 NOV</strong><span data-i18n="deadline">cierre del concurso</span></div>
+      </div>
+      <p class="forever" data-i18n="forever">El concurso termina el 30 de noviembre, pero el portal permanecerá abierto: siempre queremos recibir nuevos dibujos.</p>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <div class="featured-art art nature" role="img" aria-label="Dibujo de ejemplo con un árbol, un sol y montañas">
+        <span class="sun">☀</span><span class="mountain">⌁</span><span class="tree">🌳</span><span class="heart">♥</span>
+      </div>
+      <div class="featured-copy">
+        <p class="label" data-i18n="featuredLabel">Dibujo destacado de la semana</p>
+        <h2 id="featured-title" data-i18n="featuredTitle">Un lugar para crecer</h2>
+        <p data-i18n="featuredText">Un dibujo de ejemplo para mostrar cómo se verá una obra destacada. En la versión pública solo aparecerán los datos autorizados.</p>
+        <div class="chips"><span>6–8</span><span data-i18n="nature">Naturaleza</span><span>Caracas</span></div>
+        <p class="placeholder" data-i18n="placeholder">Contenido de demostración · será reemplazado por un dibujo autorizado</p>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <div><p class="label" data-i18n="allLabel">Galería abierta</p><h2 data-i18n="allTitle">Explora las ideas que están regresando</h2></div>
+        <button class="random" id="random" type="button" data-i18n="random">✦ Ver otro dibujo</button>
+      </div>
+
+      <div class="filters" aria-label="Filtros de la galería">
+        <label><span data-i18n="age">Edad</span><select id="age"><option value="all" data-i18n="all">Todas</option><option>4–5</option><option>6–8</option><option>9–12</option><option>13+</option></select></label>
+        <label><span data-i18n="location">Lugar</span><select id="location"><option value="all" data-i18n="allPlaces">Todos</option><option>Caracas</option><option>La Guaira</option></select></label>
+        <label><span data-i18n="theme">Tema</span><select id="theme"><option value="all" data-i18n="allThemes">Todos</option><option value="nature" data-i18n="nature">Naturaleza</option><option value="community" data-i18n="community">Comunidad</option><option value="future" data-i18n="future">Futuro</option><option value="free" data-i18n="free">Creación libre</option></select></label>
+      </div>
+
+      <div class="wall" id="wall" aria-live="polite"></div>
+      <p class="empty" id="empty" hidden data-i18n="empty">Todavía no hay dibujos en esta combinación. Prueba otro filtro.</p>
+    </section>
+
+    <section class="privacy" id="privacy">
+      <div class="lock" aria-hidden="true">♥</div>
+      <div><p class="label" data-i18n="privacyLabel">Privacidad primero</p><h2 data-i18n="privacyTitle">Celebramos la creatividad, no exponemos a los niños</h2><p data-i18n="privacyText">No publicamos rostros, nombres completos, escuelas, direcciones, contactos ni identificadores QR. Cada dibujo se publica únicamente cuando existe autorización para hacerlo, y eliminamos sus metadatos antes de subirlo.</p></div>
+    </section>
+
+    <section class="next-step">
+      <p data-i18n="next">Esta galería crecerá con los dibujos autorizados, los diez seleccionados por el jurado y una futura exposición digital e itinerante.</p>
+      <a href="index.html?lang=es#next" data-i18n="programme">Conoce el programa completo →</a>
+    </section>
+  </main>
+
+  <dialog id="modal">
+    <button class="close" id="close" type="button" aria-label="Cerrar">×</button>
+    <div id="modal-art"></div>
+    <div class="modal-copy"><p class="label" id="modal-label"></p><h2 id="modal-title"></h2><div class="chips" id="modal-chips"></div><p class="placeholder" data-i18n="modalNote">Vista de demostración con datos no identificables.</p></div>
+  </dialog>
+
+  <footer><span data-i18n="footer">Creative Commons Venezuela · Actualizado el 10 de octubre de 2026</span><a href="index.html?lang=es" data-i18n="back">Volver al proyecto</a></footer>
+  <script src="gallery.js"></script>
+</body>
+</html>
