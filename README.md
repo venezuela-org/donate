@@ -4,12 +4,13 @@ Sitio bilingue de Creative Commons Venezuela para documentar el primer ciclo del
 
 Live at: **https://venezuela-org.github.io/donate/**
 
-## Estado publicado — 10 de octubre de 2026
+## Estado publicado — 15 de noviembre de 2026
 
 - 600 kits armados
-- 509 kits entregados
-- 60 dibujos recibidos mediante los QR
-- 91 kits pendientes de entrega
+- 600 kits entregados (100%)
+- Más de 60 dibujos recibidos mediante los QR
+- Últimos 91 kits entregados en Caraballeda el 14 de noviembre
+- Entregas verificadas: 325 en La Guaira (3 de octubre), 184 en Caracas (8 de octubre) y 91 en Caraballeda (14 de noviembre)
 - US$2.800 recaudados
 - 84% compras, 5% comisiones y cambio, 2% logistica, 9% reservado para premios
 - Cierre del concurso: 30 de noviembre de 2026
@@ -21,7 +22,7 @@ Es un sitio estatico sin dependencias ni proceso de compilacion. GitHub Pages pu
 
 ```bash
 git add .
-git commit -m "Update project status: 600 assembled, 509 delivered"
+git commit -m "Complete first cycle: 600 kits delivered"
 git push origin main
 ```
 
@@ -39,7 +40,7 @@ Abrir:
 ## Archivos principales
 
 - `index.html`: pagina completa, estilos, textos bilingues y selector de idioma.
-- `status-509-delivered-es.png` / `status-509-delivered-en.png`: afiches de estado.
+- `status-600-delivered-es.png` / `status-600-delivered-en.png`: afiches finales de estado.
 - `chronology-es.png` / `chronology-en.png`: cronologia visual.
 - `docs/cronologia-y-plan-tecnico.md`: cronologia ampliada y plan de continuidad.
 - `gallery.html`, `gallery.css`, `gallery.js`, `drawings.json`: prototipo bilingue de la galeria publica.

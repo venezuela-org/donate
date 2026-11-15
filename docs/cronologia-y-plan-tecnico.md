@@ -2,7 +2,7 @@
 
 ## Cronología verificada y plan técnico de continuidad
 
-**Estado de referencia: 10 de octubre de 2026**
+**Estado de referencia: 15 de noviembre de 2026**
 
 ## 1. Cronología del primer ciclo
 
@@ -45,13 +45,14 @@
 - Se contactan organizaciones con presencia comunitaria, entre ellas Fe y Alegría, FUNDAINIL y otros aliados locales, buscando distribuir los kits en varios lugares y priorizar a niños pequeños.
 - Se acuerda documentar el proceso sin mostrar rostros ni información que permita identificar a los niños.
 
-### 3–10 de octubre de 2026 — Entregas y primeras respuestas
+### 3 de octubre–14 de noviembre de 2026 — Entregas y primeras respuestas
 
-- Se realiza una primera gran entrega de **325 kits**.
-- Al 10 de octubre, el proyecto alcanza **509 kits entregados de 600 (85%)**.
-- Permanecen **91 kits** por entregar durante la siguiente semana.
-- Se han recibido **60 dibujos** mediante los QR.
-- El primer ciclo de producción está completo: **600 kits armados de 600**.
+- El **3 de octubre** se entregan **325 kits** en tres espacios de La Guaira: 171 en el Campamento Transitorio Polideportivo José María Vargas, 129 en el Campamento Transitorio Complejo Educativo República de Panamá y 25 en el Campamento Transitorio UEE La Guaira.
+- El **8 de octubre** se asignan y entregan **184 kits** en la U.E. Abraham Reyes de Fe y Alegría, en Caracas.
+- El **14 de noviembre** se entregan los **91 kits finales** en el Campo de Golf de Caraballeda.
+- El total operativo queda reconciliado: **325 + 184 + 91 = 600 kits entregados (100%)**.
+- Se han recibido **más de 60 dibujos** mediante las invitaciones QR; el conteo exacto debe actualizarse desde la aplicación antes del cierre del concurso.
+- El primer ciclo de producción y entrega está completo: **600 kits armados y 600 entregados**.
 
 ## 2. Balance operativo
 
@@ -64,15 +65,15 @@
 
 ## 3. Plan técnico desde el kit 600
 
-### Frente A — Cierre de entregas
+### Frente A — Cierre documental de las entregas
 
-**Plazo:** próxima semana.
+**Estado:** completado operativamente; documentación en conciliación.
 
-1. Entregar los 91 kits restantes.
-2. Registrar por entrega: fecha, organización, localidad, cantidad entregada, rango aproximado de edades y responsable adulto.
-3. Reconciliar el total final contra el inventario: `entregados + remanente = 600`.
-4. Reunir fotografías y videos permitidos: kits, manos, dibujos y espacios; nunca rostros o identificadores infantiles.
-5. Publicar el cierre operativo únicamente después de confirmar las 600 entregas.
+1. Conservar el total reconciliado: `325 + 184 + 91 = 600`.
+2. Confirmar con el equipo local los rangos de edad y responsables institucionales de cada jornada.
+3. Clasificar fotografías y videos como privados, anonimizables o publicables.
+4. Publicar únicamente kits, dibujos, manos, espacios y personas adultas autorizadas; nunca rostros o identificadores infantiles.
+5. Preservar internamente las fuentes originales con fecha, nombre de archivo y huella digital.
 
 ### Frente B — Gestión de dibujos y permisos
 
