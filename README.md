@@ -42,6 +42,9 @@ Abrir:
 - `index.html`: pagina completa, estilos, textos bilingues y selector de idioma.
 - `status-600-delivered-es.png` / `status-600-delivered-en.png`: afiches finales de estado.
 - `chronology-es.png` / `chronology-en.png`: cronologia visual.
+- `docs/informe-impacto-600-kits-primer-ciclo.pdf`: informe final de impacto en espanol (10 paginas).
+- `docs/impact-report-600-kits-first-cycle-en.pdf`: final impact report in English (10 pages).
+- `report-cover-es.png` / `report-cover-en.png`: vistas previas de los informes en la pagina principal.
 - `docs/cronologia-y-plan-tecnico.md`: cronologia ampliada y plan de continuidad.
 - `gallery.html`, `gallery.css`, `gallery.js`, `drawings.json`: prototipo bilingue de la galeria publica.
 - `docs/gallery-data-spec.md`: separacion entre datos publicos y el registro privado de evidencias.
